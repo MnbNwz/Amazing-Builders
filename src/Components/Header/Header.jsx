@@ -1,28 +1,32 @@
-import React from 'react';
-import './Header.css'; // Import CSS file containing styles
-import Common from '../../Assets/Common';
-import logo from '../../Assets/logo.jpg';
+import React, { useState } from "react";
+import "./Header.css"; // Import CSS file containing styles
+import Common from "../../Common";
 
-function Header() {
-    let { home, services, about, recentProjects, contact } = Common.header;
-    return (
-        <header >
-            <div className="header-container">
-                <div className="column transparent" />
-                <div className="column transparent" />
-                <img height={100} width={100} src={logo} alt="Logo" />
+const Header = () => {
+  const [first, setfirst] = useState("Home");
 
-                <div className="column">{home}</div>
-                <div className="column">{services}</div>
-                <div className="column">{about}</div>
-                <div className="column">{recentProjects}</div>
-                <div className="column">{contact}</div>
-
-                <div className="column transparent" />
-                <div className="column transparent" />
-            </div>
-        </header>
-    );
-}
+  let headerTitles = Object.entries(Common.header).map(([key, value]) => (
+    <div
+      key={key}
+      onClick={() => setfirst(value)}
+      className={`${
+        first === value ? "yellow-color" : "transparent-color"
+      } column`}
+    >
+      {value.toUpperCase()}
+    </div>
+  ));
+  return (
+    <header>
+      <div className="header-container">
+        <img
+          src="https://static.wixstatic.com/media/01cb2a_693a0e06142941aea7fa5ccd21738a19~mv2.png/v1/crop/x_0,y_499,w_3125,h_878/fill/w_292,h_82,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/full_margin_transparent_customcolor%20(2).png"
+          alt="Company Logo"
+        />
+        {headerTitles}
+      </div>
+    </header>
+  );
+};
 
 export default Header;
