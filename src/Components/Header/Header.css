@@ -1,0 +1,49 @@
+/* Header.css */
+
+/* Styles for the header wrapper */
+.SITE_HEADER_WRAPPER {
+    position: relative;
+    width: 100%;
+    background-color: #ffffff;
+    /* Adjust to your desired background color */
+}
+
+/* Styles for the header */
+.SITE_HEADER {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Styles for the _C0cVf class */
+._C0cVf {
+    /* Add your styles here */
+}
+
+/* Styles for the _4XcTfy class */
+._4XcTfy {
+    /* Add your styles here */
+}
+
+/* Styles for the U4Bvut class */
+.U4Bvut {
+    /* Add your styles here */
+}
+
+/* Styles for the G5K6X8 class */
+.G5K6X8 {
+    /* Add your styles here */
+}
+
+/* Styles for the gUbusX class */
+.gUbusX {
+    /* Add your styles here */
+}
+
+/* Styles for the CJF7A2 class */
+.CJF7A2 {
+    /* Add your styles here */
+}
+
+/* Add more styles for specific elements as needed */
