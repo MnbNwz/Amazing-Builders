@@ -56,7 +56,7 @@ const ContactForm = () => {
       ) : (
         <input
           style={{ width: "100%", padding: "5px" }}
-          type="text"
+          type={title === "Email" ? "email" : "text"}
           value={stateVal}
           className="text-field"
           onChange={(e) => setState(e.target.value)}
@@ -65,7 +65,7 @@ const ContactForm = () => {
     </div>
   );
   return (
-    <div className="container" style={{ paddingTop: 100 }}>
+    <div className="container" style={{ paddingTop: 60 }}>
       <div
         className="col-9"
         style={{
@@ -124,7 +124,7 @@ const ContactForm = () => {
               />
               <p dangerouslySetInnerHTML={{ __html: headOfficeTelephone }} />
             </div>
-            <div className="col-6">
+            <form className="col-6">
               <h4
                 className="col-space"
                 style={{ fontSize: "x-large", paddingBottom: "40px" }}
@@ -145,7 +145,7 @@ const ContactForm = () => {
                   {submit}
                 </button>
               </div>
-            </div>
+            </form>
             <div className="col-5">
               <h4 style={{ fontSize: "x-large", paddingTop: "150px" }}>
                 {employement}
