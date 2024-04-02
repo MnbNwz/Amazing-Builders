@@ -1,12 +1,15 @@
 import "./App.css";
-import Header from "./Components/Header/Header";
+import ContactForm from "./Components/Contact_Us/ContactForm.jsx";
+import Footer from "./Components/Footer/Footer.jsx";
+import Header from "./Components/Header/Header.jsx";
 
 const App = () => {
   return (
-    <div className="main-container">
-      <div className="column"></div>
+    <div>
       <Header />
-      <div className="column"></div>
+      <ContactForm />
+
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -1,18 +1,7 @@
-.header-container {
-  display: grid;
-  grid-template-columns: auto 1fr 1fr 1fr auto 1fr;
-  align-items: center;
-  gap: 10px;
-  justify-content: space-around; /* Distributes extra space around grid items */
-  margin: 0 auto; /* Centers the grid container horizontally */
-}
-
 .column {
-  padding: 10px;
-  text-align: center;
   cursor: pointer;
   font-weight: bold;
-  font-size: larger;
+  font-size: large;
 }
 
 .column:hover {
@@ -23,4 +12,15 @@
 }
 .transparent-color {
   color: black;
+}
+.header-container {
+  display: flex;
+
+  margin-bottom: 0;
+  padding-left: 0;
+  padding: 5px 0;
+}
+.logo-container {
+  display: "flex";
+  justify-items: "center";
 }

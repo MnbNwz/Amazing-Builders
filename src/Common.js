@@ -1,11 +1,5 @@
 let Common = {
-  header: {
-    home: "Home",
-    services: "Services",
-    about: "About",
-    recentProjects: "Recent Projects",
-    contact: "Contact",
-  },
+  header: ["Home", "Services", "About", "Recent Projects", "Contact"],
   carouselText: `LEADERS IN QUALITY CONSTRUCTION AND INFRASTRUCTURE`,
   servicesText: {
     preconstructionPlanning: "Preconstruction Planning",
@@ -36,12 +30,11 @@ let Common = {
   contact: "CONTACT",
   inquiry: "Inquiries",
   inquiryText:
-    "For any inquiries, questions or commendations, please call: 0418 708 559 or fill out the following form",
+    "For any inquiries, questions or commendations, please <br /> call: <strong>0418 708 559</strong> or fill out the following form",
   headOffice: "Head Office",
-  headOfficeAddress: `53 Ravenhall Way
-    Ravenhall, VIC 3037`,
+  headOfficeAddress: `53 Ravenhall Way <br /> Ravenhall, VIC 3037`,
   headOfficeMail: "info@matrixdesignerbuilders.com.au",
-  headOfficeTelephone: "0418 708 559",
+  headOfficeTelephone: "Tel: 0418 708 559",
   employement: "Employment",
   exmpoymenetText:
     "To apply for a job with Matrix Designer Builds, please send a cover letter together with your C.V. to: info@matrixdesignerbuilders.com.au",
