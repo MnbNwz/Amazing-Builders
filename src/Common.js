@@ -36,7 +36,7 @@ let Common = {
   headOfficeMail: "info@matrixdesignerbuilders.com.au",
   headOfficeTelephone: "Tel: 0418 708 559",
   employement: "Employment",
-  exmpoymenetText:
+  exmployementText:
     "To apply for a job with Matrix Designer Builds, please send a cover letter together with your C.V. to: info@matrixdesignerbuilders.com.au",
   getA_Qoute: "Get a quote: 0418-708-559",
   socialMedia: "Socials/Media",

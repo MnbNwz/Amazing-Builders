@@ -9,7 +9,7 @@ const App = () => {
       <Header />
       <ContactForm />
 
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

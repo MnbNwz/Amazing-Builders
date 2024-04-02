@@ -3,10 +3,46 @@
   justify-content: center;
 }
 .contact-info {
-  justify-content: space-between;
+  justify-content: center;
+}
+.contact-info-2 {
   align-items: start;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 .col-space {
   padding-top: 30px;
   font-size: large;
+  line-height: 1.5;
+}
+.text-field {
+  width: 100%;
+  background-color: #f4f4f4;
+  border: 1px solid;
+}
+.text-field:hover {
+  background-color: black;
+  background-color: #c4c4c4;
+  border: 1px solid #747474;
+}
+.submit-btn {
+  border: 1px solid #3c3c3c;
+  padding: 7px 40px;
+  color: #edcd1f;
+  font-size: medium;
+  font-weight: bold;
+  background-color: #3c3c3c;
+  cursor: pointer;
+}
+.submit-btn:hover {
+  color: #3c3c3c;
+  border: 1px solid #edcd1f;
+  background-color: #edcd1f;
+}
+
+.btn-container {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  margin-top: -10px;
 }
