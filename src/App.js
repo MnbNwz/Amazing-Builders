@@ -11,13 +11,14 @@ import Services from "./Components/Services/Services.jsx";
 
 const App = () => {
   const [firstFocusedComponent, setFirstFocusedComponent] = useState("Home");
-
+  const myRef = useRef(null);
   const componentRefs = {
     home: useRef(null),
     IntroToService: useRef(null),
     aboutUs: useRef(null),
     recentProjects: useRef(null),
     contactForm: useRef(null),
+    componentRef: useRef(null),
   };
 
   useEffect(() => {
@@ -26,7 +27,8 @@ const App = () => {
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              setFirstFocusedComponent(`${key}`);
+              myRef.current = `${key}`;
+              // setFirstFocusedComponent(`${key}`);
             }
           });
         },
@@ -46,7 +48,7 @@ const App = () => {
     });
   }, []);
 
-  console.log(firstFocusedComponent);
+  console.log(myRef.current);
   const handleScrollToColumn = (ref) => {
     if (ref.current) {
       const yOffset = -95;
@@ -59,7 +61,7 @@ const App = () => {
   const smoothScrollTo = (targetPosition) => {
     const startPosition = window.pageYOffset;
     const distance = targetPosition - startPosition;
-    const duration = 1000; // Adjust this value to change the duration of smooth scrolling
+    const duration = 2000;
     let start = null;
 
     const step = (timestamp) => {
