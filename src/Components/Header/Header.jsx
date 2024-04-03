@@ -7,14 +7,7 @@ const Header = () => {
 
   return (
     <>
-      <header
-        style={{
-          position: "fixed",
-          zIndex: 1000,
-          width: "100%",
-          background: "white",
-        }}
-      >
+      <header className="header-Wrapper">
         <div className="container">
           <div className="row header-container">
             <div className="col-4 logo-container">
