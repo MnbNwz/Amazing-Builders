@@ -6,40 +6,15 @@ import picture from "../../Assets/projects.png";
 const Partners = () => {
   return (
     <div style={{ backgroundColor: "#f7f7f7", color: "black" }}>
-      <div
-        className="col-12"
-        style={{
-          paddingTop: "50px",
-          width: "100%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <h2
-          style={{
-            letterSpacing: "0.05em",
-            fontWeight: "900",
-            fontSize: "xxx-large",
-          }}
-        >
-          {Common.partners}
-        </h2>
-        <div
-          style={{
-            height: "10px",
-            width: "120px",
-            backgroundColor: "#edcd1f",
-            margin: "10px 0 20px 0",
-          }}
-        />
+      <div className="col-12 wrapper">
+        <h2 className="partner-heading">{Common.partners}</h2>
+        <div className="dash-div" />
       </div>
 
       <div className="container">
-        <div className="row">
+        <div className="row" style={{ justifyContent: "center" }}>
           <div className="col-9">
-            <img src={picture} alt="Projects" />
+            <img src={picture} style={{ maxWidth: "100%" }} alt="Projects" />
           </div>
         </div>
       </div>

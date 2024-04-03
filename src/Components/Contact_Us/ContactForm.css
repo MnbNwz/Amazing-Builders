@@ -46,3 +46,52 @@
   justify-content: end;
   margin-top: -10px;
 }
+.label-block {
+  padding-bottom: 6px;
+}
+.text-area {
+  width: 100%;
+  resize: none;
+}
+.input-text {
+  width: 100%;
+  padding: 5px;
+}
+.contact-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact-heading {
+  letter-spacing: 0.05em;
+  font-weight: 900;
+  font-size: 3.5rem;
+}
+.contact-dash-div {
+  height: 10px;
+  width: 120px;
+  background-color: #edcd1f;
+  margin: 10px 0 55px 0;
+}
+.employement-text {
+  font-size: medium;
+  padding-top: 20px;
+  line-height: 1.5;
+}
+.qoute-heading {
+  font-size: x-large;
+  text-align: center;
+  padding: 30px 0 15px 0;
+}
+.qoute-dash-div {
+  margin-top: 130px;
+  height: 10px;
+  width: 70px;
+  background-color: #edcd1f;
+}
+.social-container {
+  display: flex;
+  justify-content: space-around;
+}

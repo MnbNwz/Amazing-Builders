@@ -46,19 +46,14 @@ const ContactForm = () => {
 
   const inputFields = (title, stateVal, setState) => (
     <div style={{ marginBottom: "15px" }}>
-      <label style={{ display: "block", paddingBottom: "2px" }}>{title}</label>
+      <label className="label-block">{title}</label>
       {title === "Message" ? (
-        <textarea
-          className="text-field"
-          rows={7}
-          style={{ width: "100%", resize: "none" }}
-        />
+        <textarea className="text-field text-area" rows={7} />
       ) : (
         <input
-          style={{ width: "100%", padding: "5px" }}
           type={title === "Email" ? "email" : "text"}
           value={stateVal}
-          className="text-field"
+          className="text-field input-text"
           onChange={(e) => setState(e.target.value)}
         />
       )}
@@ -66,33 +61,9 @@ const ContactForm = () => {
   );
   return (
     <div className="container" style={{ paddingTop: 60 }}>
-      <div
-        className="col-9"
-        style={{
-          width: "100%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <h2
-          style={{
-            letterSpacing: "0.05em",
-            fontWeight: "900",
-            fontSize: "xxx-large",
-          }}
-        >
-          {contact}
-        </h2>
-        <div
-          style={{
-            height: "10px",
-            width: "120px",
-            backgroundColor: "#edcd1f",
-            margin: "10px 0 55px 0",
-          }}
-        />
+      <div className="col-9 contact-container">
+        <h2 className="contact-heading">{contact}</h2>
+        <div className="contact-dash-div" />
       </div>
 
       <div className="row map-Container">
@@ -153,33 +124,12 @@ const ContactForm = () => {
 
               <p
                 dangerouslySetInnerHTML={{ __html: exmployementText }}
-                style={{
-                  fontSize: "medium",
-                  paddingTop: "20px",
-                  lineHeight: "1.5",
-                }}
+                className="employement-text"
               />
-              <div
-                style={{
-                  marginTop: "150px",
-                  height: "10px",
-                  width: "70px",
-                  backgroundColor: "#edcd1f",
-                }}
-              />
+              <div className="qoute-dash-div" />
               <div style={{ display: "inline-block" }}>
-                <h4
-                  style={{
-                    fontSize: "x-large",
-                    textAlign: "center",
-                    padding: "30px 0 15px 0",
-                  }}
-                >
-                  {getA_Qoute}
-                </h4>
-                <div
-                  style={{ display: "flex", justifyContent: "space-around" }}
-                >
+                <h4 className="qoute-heading">{getA_Qoute}</h4>
+                <div className="social-container">
                   <img
                     alt="Instagram"
                     fetchpriority="high"

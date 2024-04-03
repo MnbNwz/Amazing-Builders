@@ -1,0 +1,19 @@
+.dash-div {
+  height: 10px;
+  width: 120px;
+  background-color: #edcd1f;
+  margin: 10px 0 30px 0;
+}
+.partner-heading {
+  letter-spacing: 0.05em;
+  font-weight: 900;
+  font-size: 3.5rem;
+}
+.wrapper {
+  display: flex;
+  width: 100%;
+  padding-top: 50px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
