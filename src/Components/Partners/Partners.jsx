@@ -6,12 +6,12 @@ import ComponentHeader from "../ComponentHeader/ComponentHeader";
 
 const Partners = () => {
   return (
-    <div className="partners-container">
+    <div className="img-wrapper">
       <ComponentHeader text={Common.partners} />
       <div className="container img-container">
-        <div className="row justify-content-center">
+        <div className="row" style={{ justifyContent: "center" }}>
           <div className="col-9">
-            <img src={picture} className="partner-image" alt="Projects" />
+            <img src={picture} style={{ maxWidth: "100%" }} alt="Projects" />
           </div>
         </div>
       </div>

@@ -20,15 +20,7 @@
 .img-container {
   padding: 0 0 50px 0;
 }
-.partners-container {
+.img-wrapper {
   background-color: #f7f7f7;
   color: black;
-}
-
-.img-container {
-  margin-top: 20px; /* Adjust margin as needed */
-}
-
-.partner-image {
-  max-width: 100%;
 }
