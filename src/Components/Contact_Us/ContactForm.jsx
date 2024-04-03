@@ -5,6 +5,7 @@ import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import "leaflet-defaulticon-compatibility";
 import "./ContactForm.css";
 import Common from "../../Common";
+import ComponentHeader from "../ComponentHeader/ComponentHeader";
 
 const ContactForm = () => {
   const position = [-37.773226874139255, 144.75179182883596];
@@ -33,6 +34,9 @@ const ContactForm = () => {
     submit,
     getA_Qoute,
     socialMedia,
+    instaLogo,
+    fbLogo,
+    tiktokLogo,
   } = Common;
 
   const showingData = (text1, text2) => (
@@ -60,12 +64,8 @@ const ContactForm = () => {
     </div>
   );
   return (
-    <div className="container" style={{ paddingTop: 60 }}>
-      <div className="col-9 contact-container">
-        <h2 className="contact-heading">{contact}</h2>
-        <div className="contact-dash-div" />
-      </div>
-
+    <div className="container">
+      <ComponentHeader text={contact} />
       <div className="row map-Container">
         <div className="col-9">
           <MapContainer
@@ -74,6 +74,7 @@ const ContactForm = () => {
             style={{
               height: `${window.innerWidth * 0.25}px`,
               width: "100%",
+              zIndex: 0,
             }}
           >
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
@@ -96,12 +97,7 @@ const ContactForm = () => {
               <p dangerouslySetInnerHTML={{ __html: headOfficeTelephone }} />
             </div>
             <form className="col-6">
-              <h4
-                className="col-space"
-                style={{ fontSize: "x-large", paddingBottom: "40px" }}
-              >
-                {contactUs}
-              </h4>
+              <h4 className="col-space contact-us-heading">{contactUs}</h4>
               {inputFields(firstName, fNameText, setfNameText)}
 
               {inputFields(lastName, lNameText, setlNameText)}
@@ -118,10 +114,7 @@ const ContactForm = () => {
               </div>
             </form>
             <div className="col-5">
-              <h4 style={{ fontSize: "x-large", paddingTop: "150px" }}>
-                {employement}
-              </h4>
-
+              <h4 className="employee-heading">{employement}</h4>
               <p
                 dangerouslySetInnerHTML={{ __html: exmployementText }}
                 className="employement-text"
@@ -130,46 +123,11 @@ const ContactForm = () => {
               <div style={{ display: "inline-block" }}>
                 <h4 className="qoute-heading">{getA_Qoute}</h4>
                 <div className="social-container">
-                  <img
-                    alt="Instagram"
-                    fetchpriority="high"
-                    src="https://static.wixstatic.com/media/11062b_6e9638ad803e4099a6116eb750b5a584~mv2.png/v1/fill/w_63,h_63,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_6e9638ad803e4099a6116eb750b5a584~mv2.png"
-                    style={{
-                      width: "63px",
-                      height: "63px",
-                      objectFit: "cover",
-                    }}
-                  />
-                  <img
-                    alt="Facebook"
-                    fetchpriority="high"
-                    src="https://static.wixstatic.com/media/11062b_366f7fdbcafc4effaeddb0dba92014c1~mv2.png/v1/fill/w_63,h_63,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_366f7fdbcafc4effaeddb0dba92014c1~mv2.png"
-                    style={{
-                      width: "63px",
-                      height: "63px",
-                      objectFit: "cover",
-                    }}
-                  />
-                  <img
-                    alt="TikTok"
-                    fetchpriority="high"
-                    src="https://static.wixstatic.com/media/11062b_ad1a1e62a5bb45c7835a3ec11d5188f2~mv2.png/v1/fill/w_63,h_63,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_ad1a1e62a5bb45c7835a3ec11d5188f2~mv2.png"
-                    style={{
-                      width: "63px",
-                      height: "63px",
-                      objectFit: "cover",
-                    }}
-                  />
+                  <img alt="Instagram" fetchpriority="high" src={instaLogo} />
+                  <img alt="Facebook" fetchpriority="high" src={fbLogo} />
+                  <img alt="TikTok" fetchpriority="high" src={tiktokLogo} />
                 </div>
-                <h4
-                  style={{
-                    fontSize: "x-large",
-                    padding: "15px 0",
-                    textAlign: "center",
-                  }}
-                >
-                  {socialMedia}
-                </h4>
+                <h4 className="SM-heading">{socialMedia}</h4>
               </div>
             </div>
           </div>

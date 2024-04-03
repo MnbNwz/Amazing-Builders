@@ -2,19 +2,16 @@ import React from "react";
 import "./Partners.css";
 import Common from "../../Common";
 import picture from "../../Assets/projects.png";
+import ComponentHeader from "../ComponentHeader/ComponentHeader";
 
 const Partners = () => {
   return (
-    <div style={{ backgroundColor: "#f7f7f7", color: "black" }}>
-      <div className="col-12 wrapper">
-        <h2 className="partner-heading">{Common.partners}</h2>
-        <div className="dash-div" />
-      </div>
-
-      <div className="container">
-        <div className="row" style={{ justifyContent: "center" }}>
+    <div className="partners-container">
+      <ComponentHeader text={Common.partners} />
+      <div className="container img-container">
+        <div className="row justify-content-center">
           <div className="col-9">
-            <img src={picture} style={{ maxWidth: "100%" }} alt="Projects" />
+            <img src={picture} className="partner-image" alt="Projects" />
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 let Common = {
   header: ["Home", "Services", "About", "Recent Projects", "Contact"],
   carouselText: `LEADERS IN QUALITY CONSTRUCTION AND INFRASTRUCTURE`,
+  services: "SERVICES",
   servicesText: {
     preconstructionPlanning: "Preconstruction Planning",
     preconstructionPlanningText:
@@ -48,6 +49,18 @@ let Common = {
   subject: "Subject",
   message: "Message",
   submit: "Submit",
+  servicesImg1:
+    "https://static.wixstatic.com/media/11062b_9456ae21…q_80,usm_0.66_1.00_0.01,enc_auto/New%20Houses.jpg",
+  servicesImg2:
+    "https://static.wixstatic.com/media/1717c1a97d9c491….01,enc_auto/Architecture%20Model%20Sketching.jpg",
+  servicesImg3:
+    "https://static.wixstatic.com/media/c19c76_22d8ec47…_auto/c19c76_22d8ec47d1484b09a9c333e4141a12a0.jpg",
+  instaLogo:
+    "https://static.wixstatic.com/media/11062b_6e9638ad803e4099a6116eb750b5a584~mv2.png/v1/fill/w_63,h_63,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_6e9638ad803e4099a6116eb750b5a584~mv2.png",
+  fbLogo:
+    "https://static.wixstatic.com/media/11062b_366f7fdbcafc4effaeddb0dba92014c1~mv2.png/v1/fill/w_63,h_63,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_366f7fdbcafc4effaeddb0dba92014c1~mv2.png",
+  tiktokLogo:
+    "https://static.wixstatic.com/media/11062b_ad1a1e62a5bb45c7835a3ec11d5188f2~mv2.png/v1/fill/w_63,h_63,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_ad1a1e62a5bb45c7835a3ec11d5188f2~mv2.png",
 };
 
 export default Common;

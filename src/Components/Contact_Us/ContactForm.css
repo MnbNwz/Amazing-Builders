@@ -95,3 +95,16 @@
   display: flex;
   justify-content: space-around;
 }
+.SM-heading {
+  font-size: x-large;
+  padding: 15px 0;
+  text-align: center;
+}
+.employee-heading {
+  font-size: x-large;
+  padding-top: 150px;
+}
+.contact-us-heading {
+  font-size: x-large;
+  padding-bottom: 40px;
+}

@@ -1,11 +1,13 @@
 import React from "react";
 import ProjectsCount from "./ProjectsCount";
+import ComponentHeader from "../ComponentHeader/ComponentHeader";
+import Common from "../../Common";
 
 const Recent_Projects = () => {
   return (
     <>
       <ProjectsCount />
-      <div>Recent_Projects</div>
+      <ComponentHeader text={Common.recentProjects} />
     </>
   );
 };

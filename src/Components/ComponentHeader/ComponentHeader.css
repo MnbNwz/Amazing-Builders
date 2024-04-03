@@ -1,0 +1,21 @@
+.contact-dash-div {
+  height: 10px;
+  width: 120px;
+  background-color: #edcd1f;
+  margin: 10px 0 55px 0;
+}
+.contact-heading {
+  letter-spacing: 0.05em;
+  font-weight: 900;
+  font-size: 3.5rem;
+}
+.contact-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.heading-Content {
+  padding: 60px 0 10px 0;
+}
