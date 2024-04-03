@@ -1,0 +1,17 @@
+.about-section {
+  background-image: url("../../Assets/matrix-2.png");
+  background-size: cover; /* Cover the entire container */
+  height: 45em;
+  background-attachment: fixed;
+  display: flex;
+  align-items: flex-start; /* Align items to the start (top) */
+  justify-content: center; /* Center horizontally */
+}
+
+.about-content {
+  width: 100%; /* Ensure the content container spans the entire width */
+  max-width: 1200px; /* Adjust as needed */
+  padding: 20px; /* Add padding to the content container */
+  box-sizing: border-box; /* Include padding in the width */
+  text-align: left; /* Align text to the left */
+}
