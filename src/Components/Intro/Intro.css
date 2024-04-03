@@ -1,0 +1,29 @@
+.down-arrow {
+  margin-top: 2em;
+  width: 2.5em;
+  height: 2.5em;
+  border: 0.4em solid white;
+  border-left: 0px;
+  border-top: 0px;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  background-image: url("../../Assets/matrix-intro-min.png"); /* Correct syntax for setting background image */
+  background-size: cover; /* Optional: adjust to cover the container */
+  height: 100vh;
+  background-attachment: fixed;
+}
+
+.heading1 {
+  padding-top: 1.5em;
+  color: white;
+  line-height: 1.2em;
+  letter-spacing: 4px;
+  font-size: 4em;
+}
