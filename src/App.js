@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import AboutUs from "./Components/AboutUs/AboutUs.jsx";
 import ContactForm from "./Components/Contact_Us/ContactForm.jsx";
@@ -10,12 +10,47 @@ import RecentProjects from "./Components/RecentProjects/RecentProjects.jsx";
 import Services from "./Components/Services/Services.jsx";
 
 const App = () => {
-  const IntroToService = useRef(null);
+  const [firstFocusedComponent, setFirstFocusedComponent] = useState("Home");
 
-  const handleScrollToColumn = () => {
-    if (IntroToService.current) {
+  const componentRefs = {
+    home: useRef(null),
+    IntroToService: useRef(null),
+    aboutUs: useRef(null),
+    recentProjects: useRef(null),
+    contactForm: useRef(null),
+  };
+
+  useEffect(() => {
+    Object.entries(componentRefs).forEach(([key, ref]) => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setFirstFocusedComponent(`${key}`);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      ); // Trigger when 50% of the component is visible
+
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+
+      // Cleanup function
+      return () => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      };
+    });
+  }, []);
+
+  console.log(firstFocusedComponent);
+  const handleScrollToColumn = (ref) => {
+    if (ref.current) {
       const yOffset = -95;
-      const element = IntroToService.current;
+      const element = ref.current;
       const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
       window.scrollTo({ top: y, behavior: "smooth" });
       smoothScrollTo(y);
@@ -50,18 +85,41 @@ const App = () => {
     currentTime--;
     return (-change / 2) * (currentTime * (currentTime - 2) - 1) + start;
   };
+
+  function ComponentWrapper({ children, forwardedRef }) {
+    return <div ref={forwardedRef}>{children}</div>;
+  }
+
   return (
     <div>
-      <Header />
-      <Intro scrollToComponent2={handleScrollToColumn} />
-      <div ref={IntroToService}>
+      <ComponentWrapper forwardedRef={componentRefs.home}>
+        <Header
+          scrollToComponent2={(ref) => handleScrollToColumn(ref)}
+          componentRefs={componentRefs}
+        />
+      </ComponentWrapper>
+      <Intro
+        scrollToComponent2={() =>
+          handleScrollToColumn(componentRefs.IntroToService)
+        }
+      />
+
+      <ComponentWrapper forwardedRef={componentRefs.IntroToService}>
         <Services />
-      </div>
-      <AboutUs />
-      <RecentProjects />
+      </ComponentWrapper>
+      <ComponentWrapper forwardedRef={componentRefs.aboutUs}>
+        <AboutUs />
+      </ComponentWrapper>
       <Partners />
-      <ContactForm />
-      <Footer />
+      <ComponentWrapper forwardedRef={componentRefs.recentProjects}>
+        <RecentProjects />
+      </ComponentWrapper>
+      <ComponentWrapper forwardedRef={componentRefs.contactForm}>
+        <ContactForm />
+      </ComponentWrapper>
+      <ComponentWrapper forwardedRef={componentRefs.footer}>
+        <Footer />
+      </ComponentWrapper>
     </div>
   );
 };

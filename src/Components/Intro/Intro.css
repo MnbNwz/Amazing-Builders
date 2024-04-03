@@ -14,9 +14,9 @@
   align-items: center;
   justify-content: flex-start;
   text-align: center;
-  background-image: url("../../Assets/matrix-intro-min.png"); /* Correct syntax for setting background image */
-  background-size: cover; /* Optional: adjust to cover the container */
-  height: 100vh;
+  background-image: url("../../Assets/matrix-intro-min.png");
+  background-size: cover;
+  height: 50em;
   background-attachment: fixed;
 }
 

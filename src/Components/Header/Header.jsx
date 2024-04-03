@@ -2,8 +2,15 @@ import React, { useState } from "react";
 import "./Header.css"; // Import CSS file containing styles
 import Common from "../../Common";
 
-const Header = () => {
+const Header = ({ componentRefs, scrollToComponent2 }) => {
   const [first, setfirst] = useState("Home");
+  const refLookup = {
+    Home: componentRefs?.home,
+    Services: componentRefs?.IntroToService,
+    About: componentRefs?.aboutUs,
+    "Recent Projects": componentRefs?.recentProjects,
+    Contact: componentRefs?.contactForm,
+  };
 
   return (
     <>
@@ -21,17 +28,22 @@ const Header = () => {
                 className="header-container"
                 style={{ justifyContent: "space-around" }}
               >
-                {Common.header.map((value, key) => (
-                  <li
-                    key={key}
-                    onClick={() => setfirst(value)}
-                    className={`${
-                      first === value ? "yellow-color" : "transparent-color"
-                    } column `}
-                  >
-                    {value.toUpperCase()}
-                  </li>
-                ))}
+                {Common.header.map((value, key) => {
+                  return (
+                    <li
+                      key={key}
+                      onClick={() => {
+                        setfirst(value);
+                        scrollToComponent2(refLookup[value]);
+                      }}
+                      className={`${
+                        first === value ? "yellow-color" : "transparent-color"
+                      } column `}
+                    >
+                      {value.toUpperCase()}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
