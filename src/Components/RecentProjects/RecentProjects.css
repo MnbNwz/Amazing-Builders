@@ -1,0 +1,21 @@
+.headings {
+  color: white;
+  margin: 10px 60px;
+}
+.heading-1 {
+  font-size: 3.8em;
+}
+.heading-2 {
+  font-size: 1.35em;
+}
+
+.row-container {
+  justify-content: center;
+  text-align: center;
+  margin: 30px 0;
+}
+.project-dash {
+  width: 3px;
+  height: 70px;
+  background-color: white;
+}
