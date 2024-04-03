@@ -50,11 +50,11 @@ let Common = {
   message: "Message",
   submit: "Submit",
   servicesImg1:
-    "https://static.wixstatic.com/media/11062b_9456ae21…q_80,usm_0.66_1.00_0.01,enc_auto/New%20Houses.jpg",
+    "https://static.wixstatic.com/media/c19c76_22d8ec47d1484b09a9c333e4141a12a0.jpg/v1/fill/w_300,h_225,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c19c76_22d8ec47d1484b09a9c333e4141a12a0.jpg",
   servicesImg2:
-    "https://static.wixstatic.com/media/1717c1a97d9c491….01,enc_auto/Architecture%20Model%20Sketching.jpg",
+    "https://static.wixstatic.com/media/1717c1a97d9c4914a55aee50264fe642.jpg/v1/fill/w_300,h_225,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Architecture%20Model%20Sketching.jpg",
   servicesImg3:
-    "https://static.wixstatic.com/media/c19c76_22d8ec47…_auto/c19c76_22d8ec47d1484b09a9c333e4141a12a0.jpg",
+    "https://static.wixstatic.com/media/11062b_9456ae21da904e56a64172fc4028f12d~mv2.jpg/v1/fill/w_300,h_225,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/New%20Houses.jpg",
   instaLogo:
     "https://static.wixstatic.com/media/11062b_6e9638ad803e4099a6116eb750b5a584~mv2.png/v1/fill/w_63,h_63,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_6e9638ad803e4099a6116eb750b5a584~mv2.png",
   fbLogo:

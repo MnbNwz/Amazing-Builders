@@ -1,0 +1,29 @@
+.card-container {
+  background-color: #f7f7f7;
+  display: flex;
+  align-items: center;
+}
+
+.card-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  text-align: center;
+}
+
+.card-container {
+  background-color: #f7f7f7;
+  height: 35em;
+}
+
+.card-title {
+  margin: 30px 32px 20px 32px;
+  font-size: 1.6em;
+  color: #3d5975;
+}
+
+.card-text {
+  margin: 0 32px 30px 32px;
+  color: #3b3a3a;
+}
