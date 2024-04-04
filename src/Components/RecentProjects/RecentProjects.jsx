@@ -13,7 +13,7 @@ const Recent_Projects = () => {
     <div className="project-image">
       <img src={src} alt={alt} />
       <div className="project-overlay">
-        <span className="overlay-text">{overlayText}</span>
+        <span className="overlay-text-proj">{overlayText}</span>
       </div>
     </div>
   );
