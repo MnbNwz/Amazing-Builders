@@ -10,13 +10,17 @@ import homeLogo from "./../../Assets/home_icon.png";
 
 const Recent_Projects = () => {
   const ProjectImage = (src, alt, overlayText) => (
-    <div className="project-image">
+    <div className="project-image" onClick={() => ProjectRouting(alt)}>
       <img src={src} alt={alt} />
       <div className="project-overlay">
         <span className="overlay-text-proj">{overlayText}</span>
       </div>
     </div>
   );
+
+  const ProjectRouting = (text) => {
+    console.log(text.split(" ")[0]);
+  };
 
   const projectsFunc = (text) => (
     <div className="allprojects-container">

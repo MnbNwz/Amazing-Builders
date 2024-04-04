@@ -1,29 +1,24 @@
-import { useEffect, useReducer, useRef, useState } from "react";
 import "./App.css";
-import AboutUs from "./Components/AboutUs/AboutUs.jsx";
-import ContactForm from "./Components/Contact_Us/ContactForm.jsx";
-import Footer from "./Components/Footer/Footer.jsx";
-import Header from "./Components/Header/Header.jsx";
-import Intro from "./Components/Intro/Intro.jsx";
-import Partners from "./Components/Partners/Partners.jsx";
-import RecentProjects from "./Components/RecentProjects/RecentProjects.jsx";
-import Services from "./Components/Services/Services.jsx";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./LandingPage.jsx";
+import HartLand from "./Components/RecentProjects/RoutProjects/HartLand.jsx";
+import Grazing from "./Components/RecentProjects/RoutProjects/Grazing.jsx";
+import SandyGate from "./Components/RecentProjects/RoutProjects/SandyGate.jsx";
+import Restfull from "./Components/RecentProjects/RoutProjects/Restfull.jsx";
 
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="*" element={<RecentProjects />} />
+        <Route path="/restful" element={<Restfull />} />
+        <Route path="/sandygate" element={<SandyGate />} />
+        <Route path="/grazing" element={<Grazing />} />
+        <Route path="/hartland" element={<HartLand />} />
       </Routes>
     </Router>
   );
 };
-// };
-
-// export default App;
 
 export default App;
