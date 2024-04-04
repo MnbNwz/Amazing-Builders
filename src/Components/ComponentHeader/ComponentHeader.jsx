@@ -6,12 +6,12 @@ const ComponentHeader = ({ side, text }) => {
     <div
       className={
         side
-          ? `col-9  heading-Content`
-          : "col-9 contact-container heading-Content"
+          ? `col-9 component-header-container`
+          : "col-9 aligning-container component-header-container"
       }
     >
-      <h2 className="contact-heading">{text}</h2>
-      <div className="contact-dash-div" />
+      <h2 className="component-heading">{text}</h2>
+      <div className="component-heading-dash-div" />
     </div>
   );
 };
