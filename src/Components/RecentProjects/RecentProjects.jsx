@@ -7,28 +7,31 @@ import grazing from "./../../Assets/grazing_Img.jpg";
 import restFull from "./../../Assets/restFull_Img.jpg";
 import sandyGate from "./../../Assets/sandyGate_Img.jpg";
 import homeLogo from "./../../Assets/home_icon.png";
+import { Link } from "react-router-dom";
 
 const Recent_Projects = () => {
   const ProjectImage = (src, alt, overlayText) => (
-    <div className="project-image" onClick={() => ProjectRouting(alt)}>
-      <img src={src} alt={alt} />
-      <div className="project-overlay">
-        <span className="overlay-text-proj">{overlayText}</span>
+    <Link to={`/${ProjectRouting(alt, 0)}`}>
+      <div className="project-image">
+        <img src={src} alt={alt} />
+        <div className="project-overlay">
+          <span className="overlay-text-proj">{overlayText}</span>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 
-  const ProjectRouting = (text) => {
-    console.log(text.split(" ")[0]);
-  };
+  const ProjectRouting = (text, place) => text.split(" ")[place].toLowerCase();
 
   const projectsFunc = (text) => (
-    <div className="allprojects-container">
-      <div className="allprojects-div">
-        <img src={homeLogo} className="home-logo" alt="Home Icon" />
+    <Link to={`/${ProjectRouting(text, 3)}`}>
+      <div className="allprojects-container">
+        <div className="allprojects-div">
+          <img src={homeLogo} className="home-logo" alt="Home Icon" />
+        </div>
+        <p className="project-title">{text}</p>
       </div>
-      <p className="project-title">{text}</p>
-    </div>
+    </Link>
   );
 
   const {

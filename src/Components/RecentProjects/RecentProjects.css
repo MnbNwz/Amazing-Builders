@@ -73,6 +73,7 @@
   justify-content: center;
 }
 .allprojects-container {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
