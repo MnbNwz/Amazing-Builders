@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useReducer, useRef, useState } from "react";
 import "./App.css";
 import AboutUs from "./Components/AboutUs/AboutUs.jsx";
 import ContactForm from "./Components/Contact_Us/ContactForm.jsx";
@@ -9,9 +9,16 @@ import Partners from "./Components/Partners/Partners.jsx";
 import RecentProjects from "./Components/RecentProjects/RecentProjects.jsx";
 import Services from "./Components/Services/Services.jsx";
 
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "UPDATE_VALUE":
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
 const App = () => {
-  const [firstFocusedComponent, setFirstFocusedComponent] = useState("Home");
-  const myRef = useRef(null);
   const componentRefs = {
     home: useRef(null),
     IntroToService: useRef(null),
@@ -21,34 +28,33 @@ const App = () => {
     componentRef: useRef(null),
   };
 
+  const [currentComponent, dispatch] = useReducer(reducer, "");
+
   useEffect(() => {
     Object.entries(componentRefs).forEach(([key, ref]) => {
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              myRef.current = `${key}`;
-              // setFirstFocusedComponent(`${key}`);
+              dispatch({ type: "UPDATE_VALUE", payload: key });
             }
           });
         },
         { threshold: 0.5 }
-      ); // Trigger when 50% of the component is visible
+      ); // Trigger when 30% of the component is visible
 
       if (ref.current) {
         observer.observe(ref.current);
       }
 
-      // Cleanup function
       return () => {
         if (ref.current) {
           observer.unobserve(ref.current);
         }
       };
     });
-  }, []);
+  }, [currentComponent]);
 
-  console.log(myRef.current);
   const handleScrollToColumn = (ref) => {
     if (ref.current) {
       const yOffset = -95;
@@ -59,7 +65,7 @@ const App = () => {
     }
   };
   const smoothScrollTo = (targetPosition) => {
-    const startPosition = window.pageYOffset;
+    const startPosition = window.scrollY;
     const distance = targetPosition - startPosition;
     const duration = 2000;
     let start = null;
@@ -96,6 +102,7 @@ const App = () => {
     <div>
       <ComponentWrapper forwardedRef={componentRefs.home}>
         <Header
+          currentComponent={currentComponent}
           scrollToComponent2={(ref) => handleScrollToColumn(ref)}
           componentRefs={componentRefs}
         />
