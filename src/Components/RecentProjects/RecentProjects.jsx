@@ -11,7 +11,12 @@ import { Link } from "react-router-dom";
 
 const Recent_Projects = () => {
   const ProjectImage = (src, alt, overlayText) => (
-    <Link to={`/${ProjectRouting(alt, 0)}`}>
+    <Link
+      to={{
+        pathname: `/projects/${ProjectRouting(alt)}`,
+        state: ProjectRouting(alt),
+      }}
+    >
       <div className="project-image">
         <img src={src} alt={alt} />
         <div className="project-overlay">
@@ -21,29 +26,25 @@ const Recent_Projects = () => {
     </Link>
   );
 
-  const ProjectRouting = (text, place) => text.split(" ")[place].toLowerCase();
+  const ProjectRouting = (text) => text.replace(" ", "_");
 
-  const projectsFunc = (text) => (
-    <Link to={`/${ProjectRouting(text, 3)}`}>
+  const projectsFunc = (text, num) => (
+    <Link
+      to={{
+        pathname: `/projects/${ProjectRouting(text)}`,
+        state: ProjectRouting(text),
+      }}
+    >
       <div className="allprojects-container">
         <div className="allprojects-div">
           <img src={homeLogo} className="home-logo" alt="Home Icon" />
         </div>
-        <p className="project-title">{text}</p>
+        <p className="project-title">{`Project  - ${num} ${text}`}</p>
       </div>
     </Link>
   );
 
-  const {
-    HarlandText,
-    SandyGateText,
-    RestfulText,
-    GrazingText,
-    projectHarlandText,
-    projectGrazingText,
-    projectRestfulText,
-    projectSandyGateText,
-  } = Common;
+  const { HarlandText, SandyGateText, RestfulText, GrazingText } = Common;
   return (
     <>
       <ProjectsCount />
@@ -56,7 +57,7 @@ const Recent_Projects = () => {
               style={{ justifyContent: "end" }}
             >
               {ProjectImage(hartLand, HarlandText, HarlandText)}
-              {ProjectImage(grazing, GrazingText, GrazingText)}
+              {ProjectImage(sandyGate, SandyGateText, SandyGateText)}
             </div>
           </div>
         </div>
@@ -64,17 +65,17 @@ const Recent_Projects = () => {
           <div className="row">
             <div className="project-image-container">
               {ProjectImage(restFull, RestfulText, RestfulText)}
-              {ProjectImage(sandyGate, SandyGateText, SandyGateText)}
+              {ProjectImage(grazing, GrazingText, GrazingText)}
             </div>
           </div>
         </div>
       </div>
       <div className="proj-text">
         <div className="project-con">
-          {projectsFunc(projectHarlandText)}
-          {projectsFunc(projectGrazingText)}
-          {projectsFunc(projectRestfulText)}
-          {projectsFunc(projectSandyGateText)}
+          {projectsFunc(HarlandText, 1)}
+          {projectsFunc(SandyGateText, 2)}
+          {projectsFunc(RestfulText, 3)}
+          {projectsFunc(GrazingText, 4)}
         </div>
       </div>
     </>

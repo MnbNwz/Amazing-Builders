@@ -16,6 +16,11 @@
   display: flex;
   padding: 5px 0;
 }
+.li-css {
+  cursor: pointer;
+  font-size: large;
+  font-weight: bold;
+}
 .logo-container {
   display: "flex";
   justify-items: "center";

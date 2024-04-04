@@ -25,10 +25,13 @@ const App = () => {
     aboutUs: useRef(null),
     recentProjects: useRef(null),
     contactForm: useRef(null),
-    componentRef: useRef(null),
   };
 
   const [currentComponent, dispatch] = useReducer(reducer, "");
+
+  const updateCurrentComponent = (newValue) => {
+    dispatch({ type: "UPDATE_VALUE", payload: newValue });
+  };
 
   useEffect(() => {
     Object.entries(componentRefs).forEach(([key, ref]) => {
@@ -36,7 +39,7 @@ const App = () => {
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              dispatch({ type: "UPDATE_VALUE", payload: key });
+              updateCurrentComponent(key);
             }
           });
         },
@@ -60,38 +63,32 @@ const App = () => {
       const yOffset = -95;
       const element = ref.current;
       const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
-      smoothScrollTo(y);
+      const startPosition = window.scrollY;
+      const distance = y - startPosition;
+      const duration = 2000;
+      let start = null;
+
+      const easeInOut = (start, distance, progress, duration) => {
+        progress /= duration / 2;
+        if (progress < 1) return (distance / 2) * progress * progress + start;
+        progress--;
+        return (-distance / 2) * (progress * (progress - 2) - 1) + start;
+      };
+
+      const step = (timestamp) => {
+        if (!start) start = timestamp;
+        const progress = timestamp - start;
+        window.scrollTo(
+          0,
+          easeInOut(startPosition, distance, progress, duration)
+        );
+
+        if (progress < duration) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
     }
-  };
-  const smoothScrollTo = (targetPosition) => {
-    const startPosition = window.scrollY;
-    const distance = targetPosition - startPosition;
-    const duration = 2000;
-    let start = null;
-
-    const step = (timestamp) => {
-      if (!start) start = timestamp;
-      const progress = timestamp - start;
-      window.scrollTo(
-        0,
-        easeInOut(startPosition, distance, progress, duration)
-      );
-
-      if (progress < duration) {
-        window.requestAnimationFrame(step);
-      }
-    };
-
-    window.requestAnimationFrame(step);
-  };
-
-  const easeInOut = (start, change, currentTime, duration) => {
-    currentTime /= duration / 2;
-    if (currentTime < 1)
-      return (change / 2) * currentTime * currentTime + start;
-    currentTime--;
-    return (-change / 2) * (currentTime * (currentTime - 2) - 1) + start;
   };
 
   function ComponentWrapper({ children, forwardedRef }) {
@@ -127,9 +124,8 @@ const App = () => {
       <ComponentWrapper forwardedRef={componentRefs.contactForm}>
         <ContactForm />
       </ComponentWrapper>
-      <ComponentWrapper forwardedRef={componentRefs.footer}>
-        <Footer />
-      </ComponentWrapper>
+
+      <Footer />
     </div>
   );
 };

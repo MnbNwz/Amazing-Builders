@@ -4,10 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HartLand from "./Components/RecentProjects/RoutProjects/HartLand.jsx";
-import Grazing from "./Components/RecentProjects/RoutProjects/Grazing.jsx";
-import SandyGate from "./Components/RecentProjects/RoutProjects/SandyGate.jsx";
-import Restfull from "./Components/RecentProjects/RoutProjects/Restfull.jsx";
+import Projects from "./Components/RecentProjects/RoutProjects/Projects.jsx";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,10 +12,7 @@ root.render(
     <Router>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/restful" element={<Restfull />} />
-        <Route path="/sandygate" element={<SandyGate />} />
-        <Route path="/grazing" element={<Grazing />} />
-        <Route path="/hartland" element={<HartLand />} />
+        <Route path="/projects/:projectName" element={<Projects />} />
       </Routes>
     </Router>
   </React.StrictMode>

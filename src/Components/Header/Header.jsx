@@ -1,8 +1,11 @@
 import React from "react";
 import "./Header.css";
 import Common from "../../Common";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = ({ componentRefs, scrollToComponent2, currentComponent }) => {
+  const location = useLocation();
+
   const refLookup = {
     Home: componentRefs?.home,
     Services: componentRefs?.IntroToService,
@@ -20,6 +23,7 @@ const Header = ({ componentRefs, scrollToComponent2, currentComponent }) => {
   };
 
   const pageTitle = pageTitles[currentComponent] || "";
+  console.log(currentComponent);
 
   return (
     <>
@@ -33,24 +37,35 @@ const Header = ({ componentRefs, scrollToComponent2, currentComponent }) => {
               />
             </div>
             <div className="col-8">
-              <ul
-                className="header-container"
-                style={{ justifyContent: "space-around" }}
-              >
-                {Common.header.map((value, key) => (
-                  <li
-                    key={key}
-                    onClick={() => {
-                      scrollToComponent2(refLookup[value]);
-                    }}
-                    className={`${
-                      pageTitle === value ? "yellow-color" : "transparent-color"
-                    } column `}
-                  >
-                    {value.toUpperCase()}
-                  </li>
-                ))}
-              </ul>
+              <Link to={location.pathname === "/" ? "" : "/"}>
+                <ul
+                  className="header-container"
+                  style={{
+                    justifyContent: "space-around",
+                    padding: 0,
+                  }}
+                >
+                  {Common.header.map((value, key) => {
+                    return (
+                      <li
+                        className={`${
+                          pageTitle === value
+                            ? "yellow-color li-css"
+                            : "transparent-color li-css"
+                        } column `}
+                        key={key}
+                        onClick={() => {
+                          refLookup[value] &&
+                            refLookup[value]?.current !== null &&
+                            scrollToComponent2(refLookup[value]);
+                        }}
+                      >
+                        {value.toUpperCase()}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </Link>
             </div>
           </div>
         </div>
