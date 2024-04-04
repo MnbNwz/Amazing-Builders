@@ -51,21 +51,30 @@ const Recent_Projects = () => {
       <div className="col-12 project-container">
         <div className="col-6">
           <div className="row">
-            <div className="project-image-container">
+            <div
+              className="project-image-container"
+              style={{ justifyContent: "end" }}
+            >
               {ProjectImage(hartLand, HarlandText, HarlandText)}
               {ProjectImage(grazing, GrazingText, GrazingText)}
-
-              {ProjectImage(restFull, RestfulText, RestfulText)}
-              {ProjectImage(sandyGate, SandyGateText, SandyGateText)}
-
-              <div className="project-con">
-                {projectsFunc(projectHarlandText)}
-                {projectsFunc(projectGrazingText)}
-                {projectsFunc(projectRestfulText)}
-                {projectsFunc(projectSandyGateText)}
-              </div>
             </div>
           </div>
+        </div>
+        <div className="col-6">
+          <div className="row">
+            <div className="project-image-container">
+              {ProjectImage(restFull, RestfulText, RestfulText)}
+              {ProjectImage(sandyGate, SandyGateText, SandyGateText)}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="proj-text">
+        <div className="project-con">
+          {projectsFunc(projectHarlandText)}
+          {projectsFunc(projectGrazingText)}
+          {projectsFunc(projectRestfulText)}
+          {projectsFunc(projectSandyGateText)}
         </div>
       </div>
     </>
