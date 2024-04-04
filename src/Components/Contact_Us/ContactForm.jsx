@@ -21,10 +21,10 @@ const ContactForm = () => {
     inquiryText,
     headOffice,
     headOfficeAddress,
-    headOfficeMail,
+    headOfficeMailAmazingConcept,
     headOfficeTelephone,
     employement,
-    exmployementText,
+    exmployementTextAmazingConcept,
     contactUs,
     firstName,
     lastName,
@@ -91,12 +91,14 @@ const ContactForm = () => {
             <div className="col-5">
               {showingData(headOffice, headOfficeAddress)}
               <p
-                dangerouslySetInnerHTML={{ __html: headOfficeMail }}
+                dangerouslySetInnerHTML={{
+                  __html: headOfficeMailAmazingConcept,
+                }}
                 className="col-space"
               />
               <p dangerouslySetInnerHTML={{ __html: headOfficeTelephone }} />
             </div>
-            <form className="col-6">
+            <form action="sent-email.php" className="col-6">
               <h4 className="col-space contact-us-heading">{contactUs}</h4>
               {inputFields(firstName, fNameText, setfNameText)}
 
@@ -108,7 +110,7 @@ const ContactForm = () => {
 
               {inputFields(message, messageText, setMessageText)}
               <div className="btn-container">
-                <button onClick={() => {}} className="submit-btn">
+                <button type="submit" className="submit-btn">
                   {submit}
                 </button>
               </div>
@@ -116,7 +118,9 @@ const ContactForm = () => {
             <div className="col-5">
               <h4 className="employee-heading">{employement}</h4>
               <p
-                dangerouslySetInnerHTML={{ __html: exmployementText }}
+                dangerouslySetInnerHTML={{
+                  __html: exmployementTextAmazingConcept,
+                }}
                 className="employement-text"
               />
               <div className="qoute-dash-div" />

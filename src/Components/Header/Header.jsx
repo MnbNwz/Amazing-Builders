@@ -2,6 +2,7 @@ import React from "react";
 import "./Header.css";
 import Common from "../../Common";
 import { Link, useLocation } from "react-router-dom";
+import logo from "./../../Assets/amazing_concept_logo.png";
 
 const Header = ({ componentRefs, scrollToComponent2, currentComponent }) => {
   const location = useLocation();
@@ -31,10 +32,13 @@ const Header = ({ componentRefs, scrollToComponent2, currentComponent }) => {
         <div className="container">
           <div className="row header-container">
             <div className="col-4 logo-container">
-              <img
-                src="https://static.wixstatic.com/media/01cb2a_693a0e06142941aea7fa5ccd21738a19~mv2.png/v1/crop/x_0,y_499,w_3125,h_878/fill/w_292,h_82,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/full_margin_transparent_customcolor%20(2).png"
-                alt="Company Logo"
-              />
+              <Link to={location.pathname === "/" ? "" : "/"}>
+                <img
+                  src={logo}
+                  alt="Company Logo"
+                  // style={{ width: "292px", height: "82px" }}
+                />
+              </Link>
             </div>
             <div className="col-8">
               <Link to={location.pathname === "/" ? "" : "/"}>
