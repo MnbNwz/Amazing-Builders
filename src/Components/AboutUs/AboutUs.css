@@ -1,7 +1,7 @@
 .about-section {
   background-image: url("../../Assets/matrix-2.png");
   background-size: cover; /* Cover the entire container */
-  height: 45em;
+  height: 40em;
   background-attachment: fixed;
   display: flex;
   align-items: flex-start; /* Align items to the start (top) */
@@ -9,9 +9,15 @@
 }
 
 .about-content {
-  width: 100%; /* Ensure the content container spans the entire width */
-  max-width: 1200px; /* Adjust as needed */
-  padding: 20px; /* Add padding to the content container */
-  box-sizing: border-box; /* Include padding in the width */
-  text-align: left; /* Align text to the left */
+  width: 100%;
+  box-sizing: border-box;
+}
+.about-test {
+  line-height: 1.4em;
+  font-size: 1.1em;
+}
+.about-content-container {
+  background-color: white;
+  height: 41em;
+  margin-top: -1em;
 }

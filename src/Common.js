@@ -13,7 +13,7 @@ let Common = {
     contructionManagementText:
       "It is essential to effectively oversee on-site operations, such as personnel and materials to ensure quality builds. We plan, coordinate, budget, and supervise the project from start to finish.",
   },
-  aboutUs: "About Us",
+  aboutUs: "ABOUT US",
   aboutUsText1:
     "Founded by two partners who had different skills and experiences but a shared vision and entrepreneurial spirit, Matrix Designer Builders is a rising Australian home builder with a wide array of experience in residential housing.",
   aboutUsText2:

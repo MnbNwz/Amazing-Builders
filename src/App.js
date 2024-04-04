@@ -119,10 +119,11 @@ const App = () => {
       <ComponentWrapper forwardedRef={componentRefs.aboutUs}>
         <AboutUs />
       </ComponentWrapper>
-      <Partners />
       <ComponentWrapper forwardedRef={componentRefs.recentProjects}>
         <RecentProjects />
       </ComponentWrapper>
+      <Partners />
+
       <ComponentWrapper forwardedRef={componentRefs.contactForm}>
         <ContactForm />
       </ComponentWrapper>

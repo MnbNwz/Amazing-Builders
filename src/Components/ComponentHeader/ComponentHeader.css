@@ -10,13 +10,13 @@
   font-size: 3.5rem;
   color: #1e2d3b;
 }
-.contact-container {
+/* .contact-container {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+  justify-content: start;
+  align-items: start;
+} */
 .heading-Content {
   padding: 60px 0 10px 0;
 }

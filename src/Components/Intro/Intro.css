@@ -16,7 +16,7 @@
   text-align: center;
   background-image: url("../../Assets/matrix-intro-min.png");
   background-size: cover;
-  height: 50em;
+  height: 100vh;
   background-attachment: fixed;
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import "./Header.css"; // Import CSS file containing styles
+import "./Header.css";
 import Common from "../../Common";
 
 const Header = ({ componentRefs, scrollToComponent2, currentComponent }) => {
