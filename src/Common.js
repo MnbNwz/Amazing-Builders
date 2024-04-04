@@ -49,6 +49,14 @@ let Common = {
   subject: "Subject",
   message: "Message",
   submit: "Submit",
+  HarlandText: "Hartland 25",
+  SandyGateText: "Sandygate 27",
+  RestfulText: "Restful 22",
+  GrazingText: "Grazing",
+  projectHarlandText: "Project 1 - Hartland 25",
+  projectSandyGateText: "Project 2 - SandyGate 27",
+  projectRestfulText: "Project 3 - Restful 22",
+  projectGrazingText: "Project 4 - Grazing",
   servicesImg1:
     "https://static.wixstatic.com/media/c19c76_22d8ec47d1484b09a9c333e4141a12a0.jpg/v1/fill/w_300,h_225,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/c19c76_22d8ec47d1484b09a9c333e4141a12a0.jpg",
   servicesImg2:

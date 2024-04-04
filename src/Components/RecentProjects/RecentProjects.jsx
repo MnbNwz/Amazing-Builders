@@ -6,9 +6,37 @@ import hartLand from "./../../Assets/hartLand_Img.jpg";
 import grazing from "./../../Assets/grazing_Img.jpg";
 import restFull from "./../../Assets/restFull_Img.jpg";
 import sandyGate from "./../../Assets/sandyGate_Img.jpg";
-import ProjectImage from "./ProjectImage";
+import homeLogo from "./../../Assets/home_icon.png";
 
 const Recent_Projects = () => {
+  const ProjectImage = (src, alt, overlayText) => (
+    <div className="project-image">
+      <img src={src} alt={alt} />
+      <div className="project-overlay">
+        <span className="overlay-text">{overlayText}</span>
+      </div>
+    </div>
+  );
+
+  const projectsFunc = (text) => (
+    <div className="allprojects-container">
+      <div className="allprojects-div">
+        <img src={homeLogo} className="home-logo" alt="Home Icon" />
+      </div>
+      <p className="project-title">{text}</p>
+    </div>
+  );
+
+  const {
+    HarlandText,
+    SandyGateText,
+    RestfulText,
+    GrazingText,
+    projectHarlandText,
+    projectGrazingText,
+    projectRestfulText,
+    projectSandyGateText,
+  } = Common;
   return (
     <>
       <ProjectsCount />
@@ -17,22 +45,18 @@ const Recent_Projects = () => {
         <div className="col-6">
           <div className="row">
             <div className="project-image-container">
-              <ProjectImage
-                src={hartLand}
-                alt="Image 1"
-                overlayText="Image 1"
-              />
-              <ProjectImage src={grazing} alt="Image 2" overlayText="Image 2" />
-              <ProjectImage
-                src={restFull}
-                alt="Image 1"
-                overlayText="Image 1"
-              />
-              <ProjectImage
-                src={sandyGate}
-                alt="Image 2"
-                overlayText="Image 2"
-              />
+              {ProjectImage(hartLand, HarlandText, HarlandText)}
+              {ProjectImage(grazing, GrazingText, GrazingText)}
+
+              {ProjectImage(restFull, RestfulText, RestfulText)}
+              {ProjectImage(sandyGate, SandyGateText, SandyGateText)}
+
+              <div className="project-con">
+                {projectsFunc(projectHarlandText)}
+                {projectsFunc(projectGrazingText)}
+                {projectsFunc(projectRestfulText)}
+                {projectsFunc(projectSandyGateText)}
+              </div>
             </div>
           </div>
         </div>
