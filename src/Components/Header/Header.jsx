@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Header.css"; // Import CSS file containing styles
 import Common from "../../Common";
 
@@ -37,24 +37,19 @@ const Header = ({ componentRefs, scrollToComponent2, currentComponent }) => {
                 className="header-container"
                 style={{ justifyContent: "space-around" }}
               >
-                {Common.header.map((value, key) => {
-                  console.log(pageTitle, value);
-                  return (
-                    <li
-                      key={key}
-                      onClick={() => {
-                        scrollToComponent2(refLookup[value]);
-                      }}
-                      className={`${
-                        pageTitle === value
-                          ? "yellow-color"
-                          : "transparent-color"
-                      } column `}
-                    >
-                      {value.toUpperCase()}
-                    </li>
-                  );
-                })}
+                {Common.header.map((value, key) => (
+                  <li
+                    key={key}
+                    onClick={() => {
+                      scrollToComponent2(refLookup[value]);
+                    }}
+                    className={`${
+                      pageTitle === value ? "yellow-color" : "transparent-color"
+                    } column `}
+                  >
+                    {value.toUpperCase()}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
