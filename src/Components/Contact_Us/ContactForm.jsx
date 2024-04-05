@@ -111,20 +111,37 @@ const ContactForm = () => {
         },
         body: JSON.stringify(requestBody),
       });
-      console.log(response);
-      setShowModal(response?.message);
+      // console.log(response);
+      let res = {
+        success: "ok",
+        message: "Message sent! Thanks for contacting us.",
+      };
 
-      // navigation("/success", {
-      //   state: response.ok ? "Data sent successfully" : response.statusText,
-      // });
+      setShowModal(res?.message);
     } catch (error) {
       console.error("Error submitting form:", error);
     }
   };
 
+  const resetingVal = () => {
+    setEmailText("");
+    setfNameText("");
+    setlNameText("");
+    setSubjectText("");
+    setMessageText("");
+  };
+
   return (
     <>
-      {showModal !== "" && <Modal showModal={showModal} />}
+      {showModal !== "" && (
+        <Modal
+          setShowModal={() => {
+            setShowModal("");
+            resetingVal();
+          }}
+          showModal={showModal}
+        />
+      )}
       <div className="container">
         <ComponentHeader text={contact} />
         <div className="row map-Container">
