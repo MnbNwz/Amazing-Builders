@@ -1,0 +1,37 @@
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px; /* Increased border-radius for rounded corners */
+  box-shadow: 0px 0px 20px #0000004d; /* Increased shadow */
+  width: 60%; /* Adjust width as needed */
+  max-width: 600px; /* Maximum width */
+  height: 100px; /* Adjust height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Align content vertically */
+  text-align: center; /* Align text horizontally */
+}
+
+/* Optionally, you can style the modal content further */
+.modal-content h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  color: #666;
+}

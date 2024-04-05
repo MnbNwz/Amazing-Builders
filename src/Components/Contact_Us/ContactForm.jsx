@@ -7,6 +7,7 @@ import "./ContactForm.css";
 import Common from "../../Common";
 import ComponentHeader from "../ComponentHeader/ComponentHeader";
 import { useNavigate } from "react-router";
+import Modal from "../Modal/Modal";
 
 const ContactForm = () => {
   const position = [-37.992040463074716, 145.20799188392283];
@@ -16,6 +17,7 @@ const ContactForm = () => {
   const [subjectText, setSubjectText] = useState("");
   const [messageText, setMessageText] = useState("");
   const [emailError, setEmailError] = useState("");
+  const [showModal, setShowModal] = useState("");
 
   const {
     contact,
@@ -24,9 +26,11 @@ const ContactForm = () => {
     headOffice,
     headOfficeAddress,
     headOfficeMailAmazingConcept,
+    headOfficeMailAmazingMaster,
     headOfficeTelephone,
     employement,
     exmployementTextAmazingConcept,
+    exmployementTextAmazingMaster,
     contactUs,
     firstName,
     lastName,
@@ -72,21 +76,21 @@ const ContactForm = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent the default form submission behavior
+    e.preventDefault();
     const validEmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const isValidEmail = validEmailRegex.test(emailText);
-    if (!isValidEmail) {
-      console.error("Invalid email submission");
-      return;
-    }
+
     if (
       fNameText === "" ||
       lNameText === "" ||
       subjectText === "" ||
       messageText === ""
     ) {
-      debugger;
-      console.error("Invalid Data submission");
+      alert("empty Data submission");
+      return;
+    }
+    if (!isValidEmail) {
+      alert("Invalid email submission");
       return;
     }
     try {
@@ -100,97 +104,102 @@ const ContactForm = () => {
       };
 
       // Make an HTTP POST request to sent-email.php with form data
-      const response = await fetch("sent-email.php", {
+      const response = await fetch("/sent-email.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(requestBody),
       });
-      debugger;
-      navigation("/success", {
-        state: response.ok ? "Data sent successfully" : response.statusText,
-      });
+      console.log(response);
+      setShowModal(response?.message);
+
+      // navigation("/success", {
+      //   state: response.ok ? "Data sent successfully" : response.statusText,
+      // });
     } catch (error) {
       console.error("Error submitting form:", error);
     }
   };
 
   return (
-    <div className="container">
-      <ComponentHeader text={contact} />
-      <div className="row map-Container">
-        <div className="col-9">
-          <MapContainer
-            center={position}
-            zoom={13}
-            style={{
-              height: `${window.innerWidth * 0.25}px`,
-              width: "100%",
-              zIndex: 0,
-            }}
-          >
-            <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-            <Marker position={position}>
-              <Popup>A marker indicating a location.</Popup>
-            </Marker>
-          </MapContainer>
+    <>
+      {showModal !== "" && <Modal showModal={showModal} />}
+      <div className="container">
+        <ComponentHeader text={contact} />
+        <div className="row map-Container">
+          <div className="col-9">
+            <MapContainer
+              center={position}
+              zoom={13}
+              style={{
+                height: `${window.innerWidth * 0.25}px`,
+                width: "100%",
+                zIndex: 0,
+              }}
+            >
+              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+              <Marker position={position}>
+                <Popup>A marker indicating a location.</Popup>
+              </Marker>
+            </MapContainer>
+          </div>
         </div>
-      </div>
-      <div className="row contact-info">
-        <div className="col-9">
-          <div className="row contact-info-2">
-            <div className="col-6">{showingData(inquiry, inquiryText)}</div>
-            <div className="col-5">
-              {showingData(headOffice, headOfficeAddress)}
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: headOfficeMailAmazingConcept,
-                }}
-                className="col-space"
-              />
-              <p dangerouslySetInnerHTML={{ __html: headOfficeTelephone }} />
-            </div>
-            <form onSubmit={handleSubmit} className="col-6">
-              <h4 className="col-space contact-us-heading">{contactUs}</h4>
-              {inputFields(firstName, fNameText, setfNameText)}
-
-              {inputFields(lastName, lNameText, setlNameText)}
-
-              {inputFields(email, emailText, setEmailText)}
-
-              {inputFields(subject, subjectText, setSubjectText)}
-
-              {inputFields(message, messageText, setMessageText)}
-              <div className="btn-container">
-                <button type="submit" className="submit-btn">
-                  {submit}
-                </button>
+        <div className="row contact-info">
+          <div className="col-9">
+            <div className="row contact-info-2">
+              <div className="col-6">{showingData(inquiry, inquiryText)}</div>
+              <div className="col-5">
+                {showingData(headOffice, headOfficeAddress)}
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: headOfficeMailAmazingMaster,
+                  }}
+                  className="col-space"
+                />
+                <p dangerouslySetInnerHTML={{ __html: headOfficeTelephone }} />
               </div>
-            </form>
-            <div className="col-5">
-              <h4 className="employee-heading">{employement}</h4>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: exmployementTextAmazingConcept,
-                }}
-                className="employement-text"
-              />
-              <div className="qoute-dash-div" />
-              <div style={{ display: "inline-block" }}>
-                <h4 className="qoute-heading">{getA_Qoute}</h4>
-                <div className="social-container">
-                  <img alt="Instagram" fetchpriority="high" src={instaLogo} />
-                  <img alt="Facebook" fetchpriority="high" src={fbLogo} />
-                  <img alt="TikTok" fetchpriority="high" src={tiktokLogo} />
+              <form onSubmit={handleSubmit} className="col-6">
+                <h4 className="col-space contact-us-heading">{contactUs}</h4>
+                {inputFields(firstName, fNameText, setfNameText)}
+
+                {inputFields(lastName, lNameText, setlNameText)}
+
+                {inputFields(email, emailText, setEmailText)}
+
+                {inputFields(subject, subjectText, setSubjectText)}
+
+                {inputFields(message, messageText, setMessageText)}
+                <div className="btn-container">
+                  <button type="submit" className="submit-btn">
+                    {submit}
+                  </button>
                 </div>
-                <h4 className="SM-heading">{socialMedia}</h4>
+              </form>
+              <div className="col-5">
+                <h4 className="employee-heading">{employement}</h4>
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html: exmployementTextAmazingMaster,
+                  }}
+                  className="employement-text"
+                />
+                <div className="qoute-dash-div" />
+                <div style={{ display: "inline-block" }}>
+                  <h4 className="qoute-heading">{getA_Qoute}</h4>
+                  <div className="social-container">
+                    <img alt="Instagram" fetchpriority="high" src={instaLogo} />
+                    <img alt="Facebook" fetchpriority="high" src={fbLogo} />
+                    <img alt="TikTok" fetchpriority="high" src={tiktokLogo} />
+                  </div>
+                  <h4 className="SM-heading">{socialMedia}</h4>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
