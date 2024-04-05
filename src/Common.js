@@ -16,10 +16,9 @@ let Common = {
   aboutUs: "ABOUT US",
 
   aboutUsText1AmazingBuilder:
-    "Founded by two partners who had different skills and experiences but a shared vision and entrepreneurial spirit, Amazing Master Builders is a rising Australian home builder with a wide array of experience in residential housing.",
+    "Welcome to Amazing Master Builder, where quality construction meets unwavering dedication. With [Years of Experience] years of expertise, we specialize in residential, commercial, and industrial projects. Our commitment to excellence, safety, and sustainability ensures superior results on time and within budget. We prioritize clear communication and personalized service, partnering closely with clients to bring their vision to life. At Amazing Master Builder, integrity and professionalism are at the core of everything we do. Trust us to deliver exceptional construction solutions tailored to your needs. Experience the difference with Amazing Master Builder – your trusted partner in construction excellence.",
   aboutUsText1AmazingConcept:
-    "Founded by two partners who had different skills and experiences but a shared vision and entrepreneurial spirit, Amazing Concept Builders is a rising Australian home builder with a wide array of experience in residential housing.",
-
+    "Welcome to Amazing Concept Builder, where quality construction meets unwavering dedication. With [Years of Experience] years of expertise, we specialize in residential, commercial, and industrial projects. Our commitment to excellence, safety, and sustainability ensures superior results on time and within budget. We prioritize clear communication and personalized service, partnering closely with clients to bring their vision to life. At Amazing Concept Builder, integrity and professionalism are at the core of everything we do. Trust us to deliver exceptional construction solutions tailored to your needs. Experience the difference with Amazing Concept Builder – your trusted partner in construction excellence.",
   aboutUsText2:
     "In an industry being filled with companies that simply reproduce more and more variants of the same house – as if each fell from a giant cookie-cutter. Few bother to challenge the status quo or alter the norm. Building a home should be an exciting and personal journey and the finished product a symbol of pride. This is why Amazing specialise in custom homes guiding clients through this personal journey.",
   aboutUsText3:
@@ -44,10 +43,10 @@ let Common = {
   headOfficeTelephone: "Tel: 0430 454 071",
   employement: "Employment",
   exmployementTextAmazingMaster:
-    "To apply for a job with Amazing Master Builds, please send a cover letter together with your C.V. to: amazingmasterbuilders.com.au",
+    "To apply for a job with Amazing Master Builds, please send a cover letter together with your C.V. to: info@amazingmasterbuilders.com.au",
   exmployementTextAmazingConcept:
-    "To apply for a job with Amazing Concept Builds, please send a cover letter together with your C.V. to: amazingconceptbuilders.com.au",
-  getA_Qoute: "Get a quote: 0418-708-559",
+    "To apply for a job with Amazing Concept Builds, please send a cover letter together with your C.V. to: info@amazingconceptbuilders.com.au",
+  getA_Qoute: "Get a quote: 0430 454 071",
   socialMedia: "Socials/Media",
 
   copywriteTextAmazingMaster: "by Amazing Master Builders.",
@@ -83,6 +82,9 @@ let Common = {
     "https://static.wixstatic.com/media/11062b_366f7fdbcafc4effaeddb0dba92014c1~mv2.png/v1/fill/w_63,h_63,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_366f7fdbcafc4effaeddb0dba92014c1~mv2.png",
   tiktokLogo:
     "https://static.wixstatic.com/media/11062b_ad1a1e62a5bb45c7835a3ec11d5188f2~mv2.png/v1/fill/w_63,h_63,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_ad1a1e62a5bb45c7835a3ec11d5188f2~mv2.png",
+  colors: {
+    yellow: "yellow",
+  },
 };
 
 export default Common;

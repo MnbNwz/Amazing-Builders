@@ -2,6 +2,9 @@ import React from "react";
 import ComponentHeader from "../ComponentHeader/ComponentHeader";
 import Common from "../../Common";
 import Card from "./Card";
+import Preconstruction from "./../../Assets/Preconstruction Planning.jpg";
+import arch from "./../../Assets/Architecture Modeling.jpg";
+import construction from "./../../Assets/Contruction Management.png";
 
 const Services = () => {
   const {
@@ -27,17 +30,17 @@ const Services = () => {
               }}
             >
               <Card
-                imgURL={servicesImg1}
+                imgURL={Preconstruction}
                 title={preconstructionPlanning}
                 text={preconstructionPlanningText}
               />
               <Card
-                imgURL={servicesImg2}
+                imgURL={arch}
                 title={architectureModeling}
                 text={architectureModelingText}
               />
               <Card
-                imgURL={servicesImg3}
+                imgURL={construction}
                 title={contructionManagement}
                 text={contructionManagementText}
               />

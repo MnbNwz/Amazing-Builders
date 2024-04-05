@@ -6,7 +6,11 @@ const Card = ({ imgURL, title, text }) => {
       <div className="row">
         <div className="col-12">
           <div>
-            <img src={imgURL} alt={title} style={{ width: "20em" }} />
+            <img
+              src={imgURL}
+              alt={title}
+              style={{ width: "20em", height: "10em" }}
+            />
           </div>
           <div className="row" style={{}}>
             <div className="col-12" style={{ justifyContent: "center" }}>

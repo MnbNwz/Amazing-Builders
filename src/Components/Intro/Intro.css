@@ -2,7 +2,7 @@
   margin-top: 2em;
   width: 2.5em;
   height: 2.5em;
-  border: 0.4em solid white;
+  border: 0.4em solid black;
   border-left: 0px;
   border-top: 0px;
   transform: rotate(45deg);
@@ -22,7 +22,7 @@
 
 .heading1 {
   padding-top: 1.5em;
-  color: white;
+  color: black;
   line-height: 1.2em;
   letter-spacing: 4px;
   font-size: 4em;

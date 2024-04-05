@@ -1,7 +1,7 @@
 import React from "react";
 import "./Partners.css";
 import Common from "../../Common";
-import picture from "../../Assets/projects.png";
+import picture from "../../Assets/projects.jpeg";
 import ComponentHeader from "../ComponentHeader/ComponentHeader";
 
 const Partners = () => {

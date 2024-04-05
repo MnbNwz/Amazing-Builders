@@ -14,9 +14,9 @@ const About_Us = () => {
             <ComponentHeader side={true} text={aboutUs} />
             <div style={{ marginBottom: "2em" }}>
               <p className="about-test">{aboutUsText1AmazingConcept}</p> <br />
-              <p className="about-test">{aboutUsText2}</p>
+              {/* <p className="about-test">{aboutUsText2}</p>
               <br />
-              <p className="about-test">{aboutUsText3}</p>
+              <p className="about-test">{aboutUsText3}</p> */}
             </div>
           </div>
         </div>

@@ -9,7 +9,7 @@ import ComponentHeader from "../ComponentHeader/ComponentHeader";
 import { useNavigate } from "react-router";
 
 const ContactForm = () => {
-  const position = [-37.773226874139255, 144.75179182883596];
+  const position = [-37.992040463074716, 145.20799188392283];
   const [fNameText, setfNameText] = useState("");
   const [lNameText, setlNameText] = useState("");
   const [emailText, setEmailText] = useState("");
