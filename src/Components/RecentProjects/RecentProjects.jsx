@@ -33,7 +33,6 @@ const Recent_Projects = () => {
   const ProjectRouting = (text) => text.replace(" ", "_");
 
   const projectsFunc = (text, num) => {
-    console.log(ProjectRouting(text));
     return (
       <div
         onClick={() =>

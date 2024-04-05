@@ -6,6 +6,7 @@ import "leaflet-defaulticon-compatibility";
 import "./ContactForm.css";
 import Common from "../../Common";
 import ComponentHeader from "../ComponentHeader/ComponentHeader";
+import { useNavigate } from "react-router";
 
 const ContactForm = () => {
   const position = [-37.773226874139255, 144.75179182883596];
@@ -14,6 +15,7 @@ const ContactForm = () => {
   const [emailText, setEmailText] = useState("");
   const [subjectText, setSubjectText] = useState("");
   const [messageText, setMessageText] = useState("");
+  const [emailError, setEmailError] = useState("");
 
   const {
     contact,
@@ -38,7 +40,7 @@ const ContactForm = () => {
     fbLogo,
     tiktokLogo,
   } = Common;
-
+  const navigation = useNavigate();
   const showingData = (text1, text2) => (
     <>
       <h4 className="col-space" style={{ fontSize: "x-large" }}>
@@ -48,21 +50,72 @@ const ContactForm = () => {
     </>
   );
 
-  const inputFields = (title, stateVal, setState) => (
-    <div style={{ marginBottom: "15px" }}>
-      <label className="label-block">{title}</label>
-      {title === "Message" ? (
-        <textarea className="text-field text-area" rows={7} />
-      ) : (
-        <input
-          type={title === "Email" ? "email" : "text"}
-          value={stateVal}
-          className="text-field input-text"
-          onChange={(e) => setState(e.target.value)}
-        />
-      )}
-    </div>
-  );
+  const inputFields = (title, stateVal, setState) => {
+    return (
+      <div style={{ marginBottom: "15px" }}>
+        <label className="label-block">{title}</label>
+        {title === "Message" ? (
+          <textarea
+            onChange={(e) => setState(e.target.value)}
+            className="text-field text-area"
+            rows={7}
+          />
+        ) : (
+          <input
+            value={stateVal}
+            className="text-field input-text"
+            onChange={(e) => setState(e.target.value)}
+          />
+        )}
+      </div>
+    );
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevent the default form submission behavior
+    const validEmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const isValidEmail = validEmailRegex.test(emailText);
+    if (!isValidEmail) {
+      console.error("Invalid email submission");
+      return;
+    }
+    if (
+      fNameText === "" ||
+      lNameText === "" ||
+      subjectText === "" ||
+      messageText === ""
+    ) {
+      debugger;
+      console.error("Invalid Data submission");
+      return;
+    }
+    try {
+      // Construct the request body
+      const requestBody = {
+        fName: fNameText,
+        lName: lNameText,
+        email: emailText,
+        subject: subjectText,
+        message: messageText,
+      };
+
+      // Make an HTTP POST request to sent-email.php with form data
+      const response = await fetch("sent-email.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestBody),
+      });
+      debugger;
+      navigation("/success", {
+        state: response.ok ? "Data sent successfully" : response.statusText,
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
+  };
+
   return (
     <div className="container">
       <ComponentHeader text={contact} />
@@ -98,7 +151,7 @@ const ContactForm = () => {
               />
               <p dangerouslySetInnerHTML={{ __html: headOfficeTelephone }} />
             </div>
-            <form action="sent-email.php" className="col-6">
+            <form onSubmit={handleSubmit} className="col-6">
               <h4 className="col-space contact-us-heading">{contactUs}</h4>
               {inputFields(firstName, fNameText, setfNameText)}
 
