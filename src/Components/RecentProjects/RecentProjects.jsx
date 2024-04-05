@@ -7,42 +7,49 @@ import grazing from "./../../Assets/grazing_Img.jpg";
 import restFull from "./../../Assets/restFull_Img.jpg";
 import sandyGate from "./../../Assets/sandyGate_Img.jpg";
 import homeLogo from "./../../Assets/home_icon.png";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Recent_Projects = () => {
-  const ProjectImage = (src, alt, overlayText) => (
-    <Link
-      to={{
-        pathname: `/projects/${ProjectRouting(alt)}`,
-        state: ProjectRouting(alt),
-      }}
-    >
-      <div className="project-image">
+  const navigate = useNavigate();
+  const ProjectImage = (src, alt, overlayText) => {
+    // console.log(ProjectRouting(alt));
+    return (
+      <div
+        onClick={() =>
+          navigate(`/projects/${ProjectRouting(alt)}`, {
+            state: ProjectRouting(alt),
+          })
+        }
+        className="project-image"
+      >
         <img src={src} alt={alt} />
         <div className="project-overlay">
           <span className="overlay-text-proj">{overlayText}</span>
         </div>
       </div>
-    </Link>
-  );
+    );
+  };
 
   const ProjectRouting = (text) => text.replace(" ", "_");
 
-  const projectsFunc = (text, num) => (
-    <Link
-      to={{
-        pathname: `/projects/${ProjectRouting(text)}`,
-        state: ProjectRouting(text),
-      }}
-    >
-      <div className="allprojects-container">
+  const projectsFunc = (text, num) => {
+    console.log(ProjectRouting(text));
+    return (
+      <div
+        onClick={() =>
+          navigate(`/projects/${ProjectRouting(text)}`, {
+            state: ProjectRouting(text),
+          })
+        }
+        className="allprojects-container"
+      >
         <div className="allprojects-div">
           <img src={homeLogo} className="home-logo" alt="Home Icon" />
         </div>
         <p className="project-title">{`Project  - ${num} ${text}`}</p>
       </div>
-    </Link>
-  );
+    );
+  };
 
   const { HarlandText, SandyGateText, RestfulText, GrazingText } = Common;
   return (

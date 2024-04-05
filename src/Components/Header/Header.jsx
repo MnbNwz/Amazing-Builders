@@ -24,7 +24,6 @@ const Header = ({ componentRefs, scrollToComponent2, currentComponent }) => {
   };
 
   const pageTitle = pageTitles[currentComponent] || "";
-  console.log(currentComponent);
 
   return (
     <>
@@ -59,9 +58,14 @@ const Header = ({ componentRefs, scrollToComponent2, currentComponent }) => {
                         } column `}
                         key={key}
                         onClick={() => {
-                          refLookup[value] &&
-                            refLookup[value]?.current !== null &&
+                          if (
+                            !(
+                              refLookup[value]?.current === null ||
+                              refLookup[value]?.current === undefined
+                            )
+                          ) {
                             scrollToComponent2(refLookup[value]);
+                          }
                         }}
                       >
                         {value.toUpperCase()}

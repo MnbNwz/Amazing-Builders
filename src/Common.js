@@ -52,7 +52,10 @@ let Common = {
 
   copywriteTextAmazingMaster: "by Amazing Master Builders.",
   copywriteTextAmazingConcept: "by Amazing Concept Builders.",
-
+  prjectsDetail1:
+    "<strong> Seamless Sophistication </strong> - Step inside our newly finished single-story dwelling, where elegance meets comfort.",
+  prjectsDetail2:
+    "The interiors are thoughtfully designed to elevate your everyday living experience. Immerse yourself in the harmony of timeless style and modern functionality without the designer price tag.",
   contactUs: "Contact Us",
   firstName: "First Name",
   lastName: "Last Name",
