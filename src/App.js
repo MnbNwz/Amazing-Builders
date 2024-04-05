@@ -43,7 +43,7 @@ const App = () => {
             }
           });
         },
-        { threshold: 0.5 }
+        { threshold: [0.35] }
       ); // Trigger when 30% of the component is visible
 
       if (ref.current) {
@@ -60,7 +60,7 @@ const App = () => {
 
   const handleScrollToColumn = (ref) => {
     if (ref.current) {
-      const yOffset = -95;
+      const yOffset = -100;
       const element = ref.current;
       const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
       const startPosition = window.scrollY;

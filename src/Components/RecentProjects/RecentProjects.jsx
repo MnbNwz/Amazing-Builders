@@ -51,25 +51,29 @@ const Recent_Projects = () => {
       <ComponentHeader text={Common.recentProjects} />
       <div className="col-12 project-container">
         <div className="col-6">
-          <div className="row">
-            <div
-              className="project-image-container"
-              style={{ justifyContent: "end" }}
-            >
-              {ProjectImage(hartLand, HarlandText, HarlandText)}
-              {ProjectImage(sandyGate, SandyGateText, SandyGateText)}
-            </div>
+          <div className="row" style={{ justifyContent: "end" }}>
+            {ProjectImage(hartLand, HarlandText, HarlandText)}
           </div>
         </div>
         <div className="col-6">
-          <div className="row">
-            <div className="project-image-container">
-              {ProjectImage(restFull, RestfulText, RestfulText)}
-              {ProjectImage(grazing, GrazingText, GrazingText)}
-            </div>
+          <div className="row" style={{ justifyContent: "start" }}>
+            {ProjectImage(sandyGate, SandyGateText, SandyGateText)}
           </div>
         </div>
       </div>
+      <div className="col-12 project-container">
+        <div className="col-6">
+          <div className="row" style={{ justifyContent: "end" }}>
+            {ProjectImage(restFull, RestfulText, RestfulText)}
+          </div>
+        </div>
+        <div className="col-6">
+          <div className="row" style={{ justifyContent: "start" }}>
+            {ProjectImage(grazing, GrazingText, GrazingText)}
+          </div>
+        </div>
+      </div>
+
       <div className="proj-text">
         <div className="project-con">
           {projectsFunc(HarlandText, 1)}
