@@ -7,12 +7,12 @@ const About_Us = () => {
   const { aboutUs, aboutUsText1AmazingConcept, aboutUsText2, aboutUsText3 } =
     Common;
   return (
-    <div className="about-section">
+    <div className="about-section" style={{ height: "auto" }}>
       <div className="about-content">
         <div className="col-6 about-content-container">
           <div className="col-12" style={{ paddingLeft: "50%" }}>
             <ComponentHeader side={true} text={aboutUs} />
-            <div style={{ marginTop: "-2em" }}>
+            <div style={{ marginBottom: "2em" }}>
               <p className="about-test">{aboutUsText1AmazingConcept}</p> <br />
               <p className="about-test">{aboutUsText2}</p>
               <br />
