@@ -46,6 +46,7 @@ const Header = ({ componentRefs, scrollToComponent2, currentComponent }) => {
               } column `}
               key={key}
               onClick={() => {
+                setOpenMenu(false);
                 if (
                   !(
                     refLookup[value]?.current === null ||

@@ -35,7 +35,7 @@
   display: none;
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 1480px) {
   .nav-menu-logo {
     display: block;
     padding-right: 5%;
@@ -51,6 +51,7 @@
     margin: 15px 0;
   }
   .nav-menu-container {
+    background-color: white;
     position: absolute;
     top: 50px;
     border: 1px solid black;

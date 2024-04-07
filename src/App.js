@@ -60,7 +60,7 @@ const App = () => {
 
   const handleScrollToColumn = (ref) => {
     if (ref.current) {
-      const yOffset = -100;
+      const yOffset = -95;
       const element = ref.current;
       const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
       const startPosition = window.scrollY;
