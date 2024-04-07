@@ -111,9 +111,9 @@ const App = () => {
         }
       />
 
-      {/* <ComponentWrapper forwardedRef={componentRefs.IntroToService}>
+      <ComponentWrapper forwardedRef={componentRefs.IntroToService}>
         <Services />
-      </ComponentWrapper> */}
+      </ComponentWrapper>
       <ComponentWrapper forwardedRef={componentRefs.aboutUs}>
         <AboutUs />
       </ComponentWrapper>

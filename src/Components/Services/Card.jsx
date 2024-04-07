@@ -1,15 +1,25 @@
 import React from "react";
 
-const Card = ({ imgURL, title, text }) => {
+const Card = ({ imgURL, title, text, mob }) => {
   return (
-    <div style={{ backgroundColor: "#f7f7f7", height: "35em" }}>
+    <div
+      className="card-container"
+      style={{
+        backgroundColor: "#f7f7f7",
+        height: mob ? "auto" : "",
+        margin: mob ? "5px 0" : "0 0",
+      }}
+    >
       <div className="row">
         <div className="col-12">
           <div>
             <img
               src={imgURL}
               alt={title}
-              style={{ width: "20em", height: "10em" }}
+              style={{
+                width: mob ? "100%" : window.innerWidth / 4,
+                height: "10em",
+              }}
             />
           </div>
           <div className="row" style={{}}>
