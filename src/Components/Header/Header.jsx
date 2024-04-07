@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import Common from "../../Common";
 import { Link, useLocation } from "react-router-dom";
 // import logo from "./../../Assets/amazing_concept_logo.png";
+import menu from "./../../Assets/menu.png";
 import logo from "./../../Assets/amazing_master_logo.png";
 
 const Header = ({ componentRefs, scrollToComponent2, currentComponent }) => {
+  const [openMenu, setOpenMenu] = useState(false);
   const location = useLocation();
 
   const refLookup = {
@@ -25,6 +27,42 @@ const Header = ({ componentRefs, scrollToComponent2, currentComponent }) => {
   };
 
   const pageTitle = pageTitles[currentComponent] || "";
+  const navTitels = () => (
+    <Link to={location.pathname === "/" ? "" : "/"}>
+      <ul
+        className="header-container ul-list"
+        style={{
+          justifyContent: "space-around",
+          padding: 0,
+        }}
+      >
+        {Common.header.map((value, key) => {
+          return (
+            <li
+              className={`${
+                pageTitle === value
+                  ? "yellow-color li-css"
+                  : "transparent-color li-css"
+              } column `}
+              key={key}
+              onClick={() => {
+                if (
+                  !(
+                    refLookup[value]?.current === null ||
+                    refLookup[value]?.current === undefined
+                  )
+                ) {
+                  scrollToComponent2(refLookup[value]);
+                }
+              }}
+            >
+              {value.toUpperCase()}
+            </li>
+          );
+        })}
+      </ul>
+    </Link>
+  );
 
   return (
     <>
@@ -40,41 +78,25 @@ const Header = ({ componentRefs, scrollToComponent2, currentComponent }) => {
                 />
               </Link>
             </div>
-            <div className="col-8">
-              <Link to={location.pathname === "/" ? "" : "/"}>
-                <ul
-                  className="header-container"
-                  style={{
-                    justifyContent: "space-around",
-                    padding: 0,
-                  }}
-                >
-                  {Common.header.map((value, key) => {
-                    return (
-                      <li
-                        className={`${
-                          pageTitle === value
-                            ? "yellow-color li-css"
-                            : "transparent-color li-css"
-                        } column `}
-                        key={key}
-                        onClick={() => {
-                          if (
-                            !(
-                              refLookup[value]?.current === null ||
-                              refLookup[value]?.current === undefined
-                            )
-                          ) {
-                            scrollToComponent2(refLookup[value]);
-                          }
-                        }}
-                      >
-                        {value.toUpperCase()}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </Link>
+            <div className="col-8 nav-titles-con">
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  position: "relative",
+                }}
+              >
+                <img
+                  onClick={() => setOpenMenu((prev) => !prev)}
+                  className="nav-menu-logo"
+                  src={menu}
+                  alt="Menu"
+                />
+                {openMenu && (
+                  <div className="nav-menu-container">{navTitels()}</div>
+                )}
+              </div>
+              <div className="title-con">{navTitels()}</div>
             </div>
           </div>
         </div>

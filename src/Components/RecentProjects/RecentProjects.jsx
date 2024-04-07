@@ -12,7 +12,6 @@ import { useNavigate } from "react-router-dom";
 const Recent_Projects = () => {
   const navigate = useNavigate();
   const ProjectImage = (src, alt, overlayText) => {
-    // console.log(ProjectRouting(alt));
     return (
       <div
         onClick={() =>

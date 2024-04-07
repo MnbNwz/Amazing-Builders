@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css"; // Re-uses images from ~leaflet package
 import "leaflet-defaulticon-compatibility";
 import "./ContactForm.css";
+import ReactDOM from "react-dom";
 import Common from "../../Common";
 import ComponentHeader from "../ComponentHeader/ComponentHeader";
-import { useNavigate } from "react-router";
-import Modal from "../Modal/Modal";
+import { json, useNavigate } from "react-router";
 
 const ContactForm = () => {
   const position = [-37.992040463074716, 145.20799188392283];
@@ -17,7 +17,8 @@ const ContactForm = () => {
   const [subjectText, setSubjectText] = useState("");
   const [messageText, setMessageText] = useState("");
   const [emailError, setEmailError] = useState("");
-  const [showModal, setShowModal] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [showModalVal, setShowModalVal] = useState("");
 
   const {
     contact,
@@ -63,6 +64,7 @@ const ContactForm = () => {
             onChange={(e) => setState(e.target.value)}
             className="text-field text-area"
             rows={7}
+            value={stateVal}
           />
         ) : (
           <input
@@ -95,29 +97,36 @@ const ContactForm = () => {
     }
     try {
       // Construct the request body
-      const requestBody = {
+      const body = JSON.stringify({
         fName: fNameText,
         lName: lNameText,
         email: emailText,
         subject: subjectText,
         message: messageText,
-      };
+      });
+
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/todos/1"
+      );
+      const data = await response.json();
+      console.log(data);
+      debugger;
+
+      setShowModalVal(data?.title);
+      setShowModal(true);
 
       // Make an HTTP POST request to sent-email.php with form data
-      const response = await fetch("/sent-email.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(requestBody),
-      });
-      // console.log(response);
-      let res = {
-        success: "ok",
-        message: "Message sent! Thanks for contacting us.",
-      };
-
-      setShowModal(res?.message);
+      // const response = await fetch(
+      //   "https://mocki.io/v1/0b7d0244-c2fd-42de-a9b0-db683810f12d",
+      //   {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body,
+      //   }
+      // );
+      console.log(response);
     } catch (error) {
       console.error("Error submitting form:", error);
     }
@@ -131,17 +140,27 @@ const ContactForm = () => {
     setMessageText("");
   };
 
+  const Modal = () => {
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setShowModalVal("");
+        setShowModal(false);
+        resetingVal();
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }, []);
+
+    return (
+      <div className="modal-overlay">
+        <div className="modal-content">{showModalVal}</div>
+      </div>
+    );
+  };
+
   return (
     <>
-      {showModal !== "" && (
-        <Modal
-          setShowModal={() => {
-            setShowModal("");
-            resetingVal();
-          }}
-          showModal={showModal}
-        />
-      )}
+      {showModal && <Modal />}
       <div className="container">
         <ComponentHeader text={contact} />
         <div className="row map-Container">

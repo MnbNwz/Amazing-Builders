@@ -2,6 +2,7 @@
   cursor: pointer;
   font-weight: bold;
   font-size: large;
+  list-style-type: none;
 }
 .column:hover {
   color: #edcd1f;
@@ -15,19 +16,45 @@
 .header-container {
   display: flex;
   padding: 5px 0;
+  justify-content: space-between;
 }
 .li-css {
   cursor: pointer;
   font-size: large;
   font-weight: bold;
 }
-.logo-container {
-  display: "flex";
-  justify-items: "center";
-}
+
 .header-Wrapper {
   position: fixed;
   z-index: 1000;
   width: 100%;
   background: white;
+}
+
+.nav-menu-logo {
+  display: none;
+}
+
+@media screen and (max-width: 880px) {
+  .nav-menu-logo {
+    display: block;
+    padding-right: 5%;
+  }
+  .title-con {
+    display: none;
+  }
+  .ul-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .li-css {
+    margin: 15px 0;
+  }
+  .nav-menu-container {
+    position: absolute;
+    top: 50px;
+    border: 1px solid black;
+    padding: 20px 10px;
+    z-index: 10000;
+  }
 }
