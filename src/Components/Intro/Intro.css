@@ -17,7 +17,7 @@
   background-image: url("../../Assets/matrix-intro-min.png");
   background-size: cover;
   height: 90vh;
-  /* width: 100vw; */
+
   background-attachment: fixed;
 }
 
@@ -26,10 +26,20 @@
   color: black;
   line-height: 1.2em;
   letter-spacing: 4px;
-  font-size: 4vw;
+  font-size: 54px;
 }
-@media screen and (max-width: 720px) {
+
+.center-inner-content {
+  justify-content: center;
+}
+@media screen and (max-width: 767px) {
   .center-content {
     height: 70vh;
+  }
+  .mob-screen {
+    margin-top: 20%;
+  }
+  .heading1 {
+    font-size: 28px;
   }
 }
