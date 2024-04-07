@@ -164,7 +164,7 @@ const ContactForm = () => {
       <div className="container">
         <ComponentHeader text={contact} />
         <div className="row map-Container">
-          <div className="col-9">
+          <div className={window.innerWidth < 768 ? "col-12" : "col-9"}>
             <MapContainer
               center={position}
               zoom={13}
@@ -182,7 +182,7 @@ const ContactForm = () => {
           </div>
         </div>
         <div className="row contact-info">
-          <div className="col-12">
+          <div className={window.innerWidth < 768 ? "col-12" : "col-9"}>
             <div className="row contact-info-2">
               <div className="col-6">{showingData(inquiry, inquiryText)}</div>
               <div className="col-5">

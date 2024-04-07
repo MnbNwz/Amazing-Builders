@@ -148,7 +148,9 @@
 .modal-content p {
   color: #666;
 }
-
+.qoute-dash-container-mob {
+  display: none;
+}
 @media screen and (max-width: 768px) {
   .map-Container {
     margin-top: -8%;
