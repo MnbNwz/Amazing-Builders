@@ -4,14 +4,12 @@ import Common from "../../Common";
 
 const Footer = () => {
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-12">
-          <div className="footer-container">
-            <p>{`© ${new Date().getFullYear()} by ${
-              Common.copywriteTextAmazingMaster
-            }`}</p>
-          </div>
+    <div className="row">
+      <div className="col-12">
+        <div className="footer-container">
+          <p>{`© ${new Date().getFullYear()} by ${
+            Common.copywriteTextAmazingMaster
+          }`}</p>
         </div>
       </div>
     </div>

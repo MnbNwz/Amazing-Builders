@@ -17,6 +17,7 @@
   background-image: url("../../Assets/matrix-intro-min.png");
   background-size: cover;
   height: 100vh;
+  width: 100vw;
   background-attachment: fixed;
 }
 
@@ -25,5 +26,5 @@
   color: black;
   line-height: 1.2em;
   letter-spacing: 4px;
-  font-size: 4em;
+  font-size: 4vw;
 }

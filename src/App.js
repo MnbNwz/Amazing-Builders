@@ -104,13 +104,14 @@ const App = () => {
           componentRefs={componentRefs}
         />
       </ComponentWrapper>
+
       <Intro
         scrollToComponent2={() =>
           handleScrollToColumn(componentRefs.IntroToService)
         }
       />
 
-      <ComponentWrapper forwardedRef={componentRefs.IntroToService}>
+      {/* <ComponentWrapper forwardedRef={componentRefs.IntroToService}>
         <Services />
       </ComponentWrapper>
       <ComponentWrapper forwardedRef={componentRefs.aboutUs}>
@@ -123,7 +124,7 @@ const App = () => {
 
       <ComponentWrapper forwardedRef={componentRefs.contactForm}>
         <ContactForm />
-      </ComponentWrapper>
+      </ComponentWrapper> */}
 
       <Footer />
     </div>
