@@ -20,3 +20,9 @@
 .component-header-container {
   padding: 60px 0 10px 0;
 }
+@media screen and (max-width: 600px) {
+  .component-heading {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+}

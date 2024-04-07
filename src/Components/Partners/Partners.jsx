@@ -6,9 +6,9 @@ import ComponentHeader from "../ComponentHeader/ComponentHeader";
 
 const Partners = () => {
   return (
-    <div className="img-wrapper">
+    <div className="col-12  img-wrapper">
       <ComponentHeader text={Common.partners} />
-      <div className="container img-container">
+      <div className=" img-container">
         <div className="row" style={{ justifyContent: "center" }}>
           <div className="col-9">
             <img src={picture} style={{ maxWidth: "100%" }} alt="Projects" />

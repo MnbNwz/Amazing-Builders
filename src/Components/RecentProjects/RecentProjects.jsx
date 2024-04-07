@@ -52,7 +52,6 @@ const Recent_Projects = () => {
   const { HarlandText, SandyGateText, RestfulText, GrazingText } = Common;
   return (
     <div style={{ paddingTop: "2%" }}>
-      {/* <ProjectsCount /> */}
       <ComponentHeader text={Common.recentProjects} />
       <div className="col-12 project-container">
         <div className="col-6">

@@ -111,18 +111,19 @@
   justify-content: center;
   align-content: center;
 }
-/* 
-.animate {
-  animation: slideUp 1s ease forwards;
-}
 
-@keyframes slideUp {
-  0% {
-    transform: translateY(50%);
-    opacity: 0;
+@media screen and (max-width: 767px) {
+  .project-image {
+    height: 25em;
   }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
+}
+@media screen and (max-width: 660px) {
+  .project-image {
+    height: 23em;
   }
-} */
+}
+@media screen and (max-width: 480px) {
+  .project-image {
+    height: 20em;
+  }
+}

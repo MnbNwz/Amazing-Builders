@@ -20,3 +20,23 @@
   background-color: white;
   padding: 10px;
 }
+
+.about-text {
+  padding-left: 30%;
+}
+
+@media screen and (max-width: 992px) {
+  .about-text {
+    padding-left: 20%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .about-text {
+    padding-left: 10%;
+  }
+}
+@media screen and (max-width: 660px) {
+  .about-text {
+    padding-left: 0%;
+  }
+}

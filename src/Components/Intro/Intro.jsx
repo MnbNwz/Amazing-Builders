@@ -4,7 +4,6 @@ import Common from "../../Common";
 
 const YourComponent = ({ scrollToComponent2 }) => {
   return (
-    // <div>nsdjk</div>
     <div className="col-12 center-content">
       <div className="col-6">
         <div className="row">
