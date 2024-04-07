@@ -76,6 +76,7 @@
   margin: 10px 0 55px 0;
 }
 .employement-text {
+  overflow: hidden;
   font-size: medium;
   padding-top: 20px;
   line-height: 1.5;
@@ -149,8 +150,14 @@
 }
 
 @media screen and (max-width: 768px) {
-  .modal-content {
-    width: 90%; /* Adjust width for smaller screens */
-    max-width: 90%; /* Maximum width for smaller screens */
+  .map-Container {
+    margin-top: -8%;
+  }
+  .qoute-dash-container {
+    display: none;
+  }
+  .qoute-dash-container-mob {
+    display: flex;
+    justify-content: center;
   }
 }

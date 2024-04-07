@@ -182,7 +182,7 @@ const ContactForm = () => {
           </div>
         </div>
         <div className="row contact-info">
-          <div className="col-9">
+          <div className="col-12">
             <div className="row contact-info-2">
               <div className="col-6">{showingData(inquiry, inquiryText)}</div>
               <div className="col-5">
@@ -192,6 +192,7 @@ const ContactForm = () => {
                     __html: headOfficeMailAmazingMaster,
                   }}
                   className="col-space"
+                  style={{ overflow: "hidden" }}
                 />
                 <p dangerouslySetInnerHTML={{ __html: headOfficeTelephone }} />
               </div>
@@ -220,16 +221,34 @@ const ContactForm = () => {
                   }}
                   className="employement-text"
                 />
-                <div className="qoute-dash-div" />
-                <div style={{ display: "inline-block" }}>
-                  <h4 className="qoute-heading">{getA_Qoute}</h4>
-                  <div className="social-container">
-                    <img alt="Instagram" fetchpriority="high" src={instaLogo} />
-                    <img alt="Facebook" fetchpriority="high" src={fbLogo} />
-                    <img alt="TikTok" fetchpriority="high" src={tiktokLogo} />
+                <div className="qoute-dash-container">
+                  <div className="qoute-dash-div" />
+                  <div style={{ display: "inline-block" }}>
+                    <h4 className="qoute-heading">{getA_Qoute}</h4>
+                    <div className="social-container">
+                      <img
+                        alt="Instagram"
+                        fetchpriority="high"
+                        src={instaLogo}
+                      />
+                      <img alt="Facebook" fetchpriority="high" src={fbLogo} />
+                      <img alt="TikTok" fetchpriority="high" src={tiktokLogo} />
+                    </div>
+                    <h4 className="SM-heading">{socialMedia}</h4>
                   </div>
-                  <h4 className="SM-heading">{socialMedia}</h4>
                 </div>
+              </div>
+            </div>
+
+            <div className="qoute-dash-container-mob">
+              <div style={{ display: "inline-block" }}>
+                <h4 className="qoute-heading">{getA_Qoute}</h4>
+                <div className="social-container">
+                  <img alt="Instagram" fetchpriority="high" src={instaLogo} />
+                  <img alt="Facebook" fetchpriority="high" src={fbLogo} />
+                  <img alt="TikTok" fetchpriority="high" src={tiktokLogo} />
+                </div>
+                <h4 className="SM-heading">{socialMedia}</h4>
               </div>
             </div>
           </div>
