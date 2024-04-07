@@ -19,18 +19,21 @@ const Projects = ({ componentRefs }) => {
   const [imageIndex, setImageIndex] = useState(1);
   const location = useLocation();
   const projectData = location?.state;
+  const selectingClass = () => {
+    return window.innerWidth < 768 ? "col-9" : "col-6";
+  };
 
   return (
     <div className="col-12">
       <Header componentRefs={componentRefs} />
       <div className="row project-heading">
-        <div className="col-6">
+        <div className={selectingClass()}>
           <ComponentHeader side={true} text={projectData} />
         </div>
       </div>
 
       <div className="row centering">
-        <div className="col-6">
+        <div className={selectingClass()}>
           <p
             dangerouslySetInnerHTML={{ __html: Common.prjectsDetail1 }}
             className="rec-proj-text"
@@ -44,10 +47,11 @@ const Projects = ({ componentRefs }) => {
       </div>
 
       <div className="row centering">
-        <div className="col-6">
+        <div className={selectingClass()}>
           <img
             src={images[imageIndex]}
             className="master-img"
+            style={{ width: "100%" }}
             alt={`Project ${imageIndex}`}
           />
         </div>
