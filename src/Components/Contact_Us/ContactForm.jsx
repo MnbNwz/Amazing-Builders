@@ -105,28 +105,36 @@ const ContactForm = () => {
         message: messageText,
       });
 
-      const response = await fetch(
-        "https://jsonplaceholder.typicode.com/todos/1"
-      );
-      const data = await response.json();
-      console.log(data);
-      debugger;
+      // const response = await fetch(
+      //   "https://jsonplaceholder.typicode.com/todos/1"
+      // );
+      // const data = await response.json();
+      // console.log(data);
+      // debugger;
 
-      setShowModalVal(data?.title);
-      setShowModal(true);
+      // setShowModalVal(data?.title);
+      // setShowModal(true);
 
       // Make an HTTP POST request to sent-email.php with form data
-      // const response = await fetch(
-      //   "https://mocki.io/v1/0b7d0244-c2fd-42de-a9b0-db683810f12d",
-      //   {
-      //     method: "POST",
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //     },
-      //     body,
-      //   }
-      // );
-      console.log(response);
+      const response = await fetch("send-email.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body,
+      });
+      setShowModalVal(response?.message);
+      if (response) {
+        if (response?.message) {
+          if (
+            response?.message !== null &&
+            response?.message !== "" &&
+            response?.message !== undefined
+          ) {
+            setShowModal(true);
+          }
+        }
+      }
     } catch (error) {
       console.error("Error submitting form:", error);
     }
