@@ -197,7 +197,7 @@ const ContactForm = () => {
                 {showingData(headOffice, headOfficeAddress)}
                 <p
                   dangerouslySetInnerHTML={{
-                    __html: headOfficeMailAmazingMaster,
+                    __html: headOfficeMailAmazingConcept,
                   }}
                   className="col-space"
                   style={{ overflow: "hidden" }}
@@ -225,7 +225,7 @@ const ContactForm = () => {
                 <h4 className="employee-heading">{employement}</h4>
                 <p
                   dangerouslySetInnerHTML={{
-                    __html: exmployementTextAmazingMaster,
+                    __html: exmployementTextAmazingConcept,
                   }}
                   className="employement-text"
                 />

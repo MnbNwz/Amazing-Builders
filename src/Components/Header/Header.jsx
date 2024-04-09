@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import "./Header.css";
 import Common from "../../Common";
 import { Link, useLocation } from "react-router-dom";
-// import logo from "./../../Assets/amazing_concept_logo.png";
+import logo from "./../../Assets/amazing_concept_logo.png";
 import menu from "./../../Assets/menu.png";
-import logo from "./../../Assets/amazing_master_logo.png";
+// import logo from "./../../Assets/amazing_master_logo.png";
 
 const Header = ({ componentRefs, scrollToComponent2, currentComponent }) => {
   const [openMenu, setOpenMenu] = useState(false);

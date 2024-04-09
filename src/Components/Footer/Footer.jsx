@@ -9,7 +9,8 @@ const Footer = () => {
         <div className="col-12">
           <div className="footer-container">
             <p>{`© ${new Date().getFullYear()} by ${
-              Common.copywriteTextAmazingMaster
+              // Common.copywriteTextAmazingMaster
+              Common.copywriteTextAmazingConcept
             }`}</p>
           </div>
         </div>
