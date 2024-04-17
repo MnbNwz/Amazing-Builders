@@ -4,10 +4,9 @@ import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css"; // Re-uses images from ~leaflet package
 import "leaflet-defaulticon-compatibility";
 import "./ContactForm.css";
-import ReactDOM from "react-dom";
 import Common from "../../Common";
 import ComponentHeader from "../ComponentHeader/ComponentHeader";
-import { json, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 
 const ContactForm = () => {
   const position = [-37.992040463074716, 145.20799188392283];
@@ -16,7 +15,6 @@ const ContactForm = () => {
   const [emailText, setEmailText] = useState("");
   const [subjectText, setSubjectText] = useState("");
   const [messageText, setMessageText] = useState("");
-  const [emailError, setEmailError] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [showModalVal, setShowModalVal] = useState("");
 
@@ -235,12 +233,23 @@ const ContactForm = () => {
                     <h4 className="qoute-heading">{getA_Qoute}</h4>
                     <div className="social-container">
                       <img
+                        style={{ cursor: "pointer" }}
                         alt="Instagram"
                         fetchpriority="high"
                         src={instaLogo}
                       />
-                      <img alt="Facebook" fetchpriority="high" src={fbLogo} />
-                      <img alt="TikTok" fetchpriority="high" src={tiktokLogo} />
+                      <img
+                        style={{ cursor: "pointer" }}
+                        alt="Facebook"
+                        fetchpriority="high"
+                        src={fbLogo}
+                      />
+                      <img
+                        style={{ cursor: "pointer" }}
+                        alt="TikTok"
+                        fetchpriority="high"
+                        src={tiktokLogo}
+                      />
                     </div>
                     <h4 className="SM-heading">{socialMedia}</h4>
                   </div>
@@ -249,12 +258,27 @@ const ContactForm = () => {
             </div>
 
             <div className="qoute-dash-container-mob">
-              <div style={{ display: "inline-block" }}>
+              <div style={{ display: "inline-block", cursor: "pointer" }}>
                 <h4 className="qoute-heading">{getA_Qoute}</h4>
                 <div className="social-container">
-                  <img alt="Instagram" fetchpriority="high" src={instaLogo} />
-                  <img alt="Facebook" fetchpriority="high" src={fbLogo} />
-                  <img alt="TikTok" fetchpriority="high" src={tiktokLogo} />
+                  <img
+                    style={{ cursor: "pointer" }}
+                    alt="Instagram"
+                    fetchpriority="high"
+                    src={instaLogo}
+                  />
+                  <img
+                    style={{ cursor: "pointer" }}
+                    alt="Facebook"
+                    fetchpriority="high"
+                    src={fbLogo}
+                  />
+                  <img
+                    style={{ cursor: "pointer" }}
+                    alt="TikTok"
+                    fetchpriority="high"
+                    src={tiktokLogo}
+                  />
                 </div>
                 <h4 className="SM-heading">{socialMedia}</h4>
               </div>
